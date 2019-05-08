@@ -47,7 +47,7 @@
                 "DavideCasiraghi\\LaravelSmartBlog\\LaravelSmartBlogServiceProvider"
             ],
             "aliases": {
-                "LaravelSmartBlog": "DavideCasiraghi\\LaravelSmartBlog\\LaravelSmartBlogFacade"
+                "LaravelSmartBlog": "DavideCasiraghi\\LaravelSmartBlog\\LaravelSmartBlog"
             }
         }
     }

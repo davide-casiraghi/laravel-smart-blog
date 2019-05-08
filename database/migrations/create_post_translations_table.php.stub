@@ -14,6 +14,7 @@ class CreatePostTranslationsTable extends Migration
 
             $table->string('title');
             $table->text('body')->nullable();
+            
             $table->string('slug')->nullable();
             $table->text('before_content')->nullable();
             $table->text('after_content')->nullable();
