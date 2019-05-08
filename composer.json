@@ -1,0 +1,54 @@
+{
+    "name": "davide-casiraghi/laravel-smart-blog",
+    "description": "A smart multi language blog package for Laravel.",
+    "keywords": [
+        "davide-casiraghi",
+        "laravel-smart-blog"
+    ],
+    "homepage": "https://github.com/davide-casiraghi/laravel-smart-blog",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Davide Casiraghi",
+            "email": "davide.casiraghi@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DavideCasiraghi\\LaravelSmartBlog\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DavideCasiraghi\\LaravelSmartBlog\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DavideCasiraghi\\LaravelSmartBlog\\LaravelSmartBlogServiceProvider"
+            ],
+            "aliases": {
+                "LaravelSmartBlog": "DavideCasiraghi\\LaravelSmartBlog\\LaravelSmartBlogFacade"
+            }
+        }
+    }
+}
