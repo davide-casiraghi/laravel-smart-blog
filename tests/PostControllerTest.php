@@ -5,6 +5,7 @@ namespace DavideCasiraghi\LaravelSmartBlog\Tests;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelSmartBlog\Models\Post;
+use DavideCasiraghi\LaravelSmartBlog\Models\Category;
 
 class PostControllerTest extends TestCase
 {
@@ -48,7 +49,10 @@ class PostControllerTest extends TestCase
     public function it_stores_a_valid_post()
     {
         $this->authenticateAsAdmin();
-
+        $category = factory(Category::class)->create([
+                            'name' => 'Regular Jams',
+                            'slug' => 'regular-jams',
+                        ]);
         $data = [
             'title' => 'test title',
             'body' => 'test body',
@@ -58,10 +62,10 @@ class PostControllerTest extends TestCase
 
         $response = $this
             ->followingRedirects()
-            ->post('/posts', $data)->dump();
+            ->post('/posts', $data);
 
-        //$this->assertDatabaseHas('post_translations', ['locale' => 'en']);
-        //$response->assertViewIs('laravel-smart-blog::posts.index');
+        $this->assertDatabaseHas('post_translations', ['locale' => 'en']);
+        $response->assertViewIs('laravel-smart-blog::posts.index');
     }
 
     /** @test */
