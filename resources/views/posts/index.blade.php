@@ -1,4 +1,4 @@
-@extends('posts.layout')
+@extends('laravel-events-calendar::posts.layout')
 
 @section('javascript-document-ready')
     @parent
@@ -34,14 +34,14 @@
             <div class="row">    
                 @csrf
                 <div class="col-12 col-sm-6 pr-sm-2"> 
-                    @include('partials.forms.input', [
+                    @include('laravel-smart-blog::partials.input', [
                         'name' => 'keywords',
                         'placeholder' => __('views.search_by_post_name'),
                         'value' => $searchKeywords
                     ])
                 </div>
                 <div class="col-12 col-sm-6">
-                    @include('partials.forms.select', [
+                    @include('laravel-smart-blog::partials.select', [
                         'name' => 'category_id',
                         'placeholder' => __('views.filter_by_category'),
                         'records' => $categories,

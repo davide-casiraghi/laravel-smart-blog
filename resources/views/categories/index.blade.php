@@ -1,4 +1,4 @@
-@extends('categories.layout')
+@extends('laravel-events-calendar::categories.layout')
 
 
 @section('content')

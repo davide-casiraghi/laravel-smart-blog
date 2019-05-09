@@ -1,4 +1,4 @@
-@extends('posts.layout')
+@extends('laravel-events-calendar::posts.layout')
 
 
 @section('content')
@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        @include('partials.forms.error-management', [
+        @include('laravel-smart-blog::partials.error-management', [
               'style' => 'alert-danger',
         ])
 
@@ -22,7 +22,7 @@
 
              <div class="row">
                 <div class="col-12">
-                    @include('partials.forms.input', [
+                    @include('laravel-smart-blog::partials.input', [
                         'title' => __('views.title'),
                         'name' => 'title',
                         'placeholder' => 'Post title',
@@ -32,7 +32,7 @@
                 </div>
                 
                 <div class="col-12">
-                    @include('partials.forms.select', [
+                    @include('laravel-smart-blog::partials.select', [
                         'title' => __('views.category'),
                         'name' => 'category_id',
                         'placeholder' => __('views.select_category'),
@@ -53,7 +53,7 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    @include('partials.forms.textarea-plain', [
+                    @include('laravel-smart-blog::partials.textarea-plain', [
                         'title' =>  __('views.before_post_contents'),
                         'name' => 'before_content',
                         'value' => old('before_content'),
@@ -61,7 +61,7 @@
                     ])
                 </div>
                 <div class="col-12">
-                    @include('partials.forms.textarea-post', [
+                    @include('laravel-smart-blog::partials.textarea-post', [
                         'title' => 'Text',
                         'name' => 'body',
                         'placeholder' => 'Post text',
@@ -70,7 +70,7 @@
                     ])
                 </div>
                 <div class="col-12">
-                    @include('partials.forms.textarea-plain', [
+                    @include('laravel-smart-blog::partials.textarea-plain', [
                         'title' =>  __('views.after_post_contents'),
                         'name' => 'after_content',
                         'value' => old('after_content'),
@@ -78,7 +78,7 @@
                     ])
                 </div>
                 
-                @include('partials.forms.upload-image', [
+                @include('laravel-smart-blog::partials.upload-image', [
                       'title' => __('views.upload_profile_picture'), 
                       'name' => 'introimage',
                       'folder' => 'posts_intro_images',
@@ -86,7 +86,7 @@
                 ])
             </div>
 
-            @include('partials.forms.buttons-back-submit', [
+            @include('laravel-smart-blog::partials.buttons-back-submit', [
                 'route' => 'posts.index'  
             ])
 

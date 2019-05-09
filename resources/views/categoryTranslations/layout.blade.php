@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('laravel-smart-blog::layout')
 
 @section('title',  "Category translation" )
 

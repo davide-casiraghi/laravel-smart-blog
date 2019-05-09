@@ -1,4 +1,4 @@
-@extends('categories.layout')
+@extends('laravel-events-calendar::categories.layout')
 
 
 @section('content')
@@ -13,7 +13,7 @@
             </div>
         </div>
 
-        @include('partials.forms.error-management', [
+        @include('laravel-smart-blog::partials.error-management', [
             'style' => 'alert-danger',
         ])
 
@@ -23,7 +23,7 @@
 
              <div class="row">
                 <div class="col-12">
-                    @include('partials.forms.input', [
+                    @include('laravel-smart-blog::partials.input', [
                           'title' => __('general.name'),
                           'name' => 'name',
                           'placeholder' => 'Category name',
@@ -32,7 +32,7 @@
                     ])
                 </div>
                 <div class="col-12">
-                    @include('partials.forms.textarea', [
+                    @include('laravel-smart-blog::partials.textarea', [
                           'title' => __('general.description'),
                           'name' => 'description',
                           'placeholder' => 'Description',
@@ -42,7 +42,7 @@
                 </div>
             </div>
             
-            @include('partials.forms.buttons-back-submit', [
+            @include('laravel-smart-blog::partials.buttons-back-submit', [
                 'route' => 'categories.index'  
             ])
 

@@ -1,4 +1,4 @@
-@extends('categoryTranslations.layout')
+@extends('laravel-events-calendar::categoryTranslations.layout')
 
 @section('content')
     <div class="container max-w-md px-0">
@@ -11,25 +11,25 @@
             </div>
         </div>
 
-        @include('partials.forms.error-management', [
+        @include('laravel-smart-blog::partials.error-management', [
               'style' => 'alert-danger',
         ])
 
         <form action="{{ route('categoryTranslations.store') }}" method="POST">
             @csrf
 
-                @include('partials.forms.input-hidden', [
+                @include('laravel-smart-blog::partials.input-hidden', [
                       'name' => 'category_id',
                       'value' => $categoryId,
                 ])
-                @include('partials.forms.input-hidden', [
+                @include('laravel-smart-blog::partials.input-hidden', [
                       'name' => 'language_code',
                       'value' => $languageCode
                 ])
 
              <div class="row">
                 <div class="col-12">
-                    @include('partials.forms.input', [
+                    @include('laravel-smart-blog::partials.input', [
                         'title' => 'Name',
                         'name' => 'name',
                         'placeholder' => 'Category name',
@@ -39,7 +39,7 @@
                 </div>
                 
                 <div class="col-12">
-                    @include('partials.forms.textarea', [
+                    @include('laravel-smart-blog::partials.textarea', [
                           'title' => __('general.description'),
                           'name' => 'description',
                           'placeholder' => 'Description',
@@ -51,7 +51,7 @@
 
             <div class="row mt-2">  
                 <div class="col-12 action">
-                    @include('partials.forms.buttons-back-submit', [
+                    @include('laravel-smart-blog::partials.buttons-back-submit', [
                         'route' => 'categories.index'  
                     ])
                 </div>

@@ -1,4 +1,4 @@
-@extends('posts.layout')
+@extends('laravel-events-calendar::posts.layout')
 
 @section('title'){{ $post->title }}@endsection
 @section('description'){{ Str::limit(strip_tags($post->body), $limit = 150, $end = '...') }}@endsection
