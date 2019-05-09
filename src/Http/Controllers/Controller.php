@@ -2,7 +2,7 @@
 
 namespace DavideCasiraghi\LaravelSmartBlog\Http\Controllers;
 
-use App\User;
+//use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -22,38 +22,27 @@ class Controller extends BaseController
      *
      * @return int $ret
      */
-    public function getLoggedUser()
-    {
-        $user = Auth::user();
-
-        // This is needed to not get error in the queries with: ->when($loggedUser->id, function ($query, $loggedUserId) {
-        if (! $user) {
-            $user = new User();
-            $user->name = null;
-            $user->group = null;
-        }
-
-        $ret = $user;
-
-        return $ret;
-    }
+     public function getLoggedUser()
+     {
+         $ret = Auth::user();
+         return $ret;
+     }
 
     // **********************************************************************
 
     /**
      * Get the current logged user id.
      *
-     * @return bool $ret - the current logged user id, if admin or super admin 0
+     * @return bool $ret - the current logged user id, if admin($user->group == 2) or super admin()$user->group == 1) is stet to 0
      */
     public function getLoggedAuthorId()
     {
         $user = Auth::user();
-
         $ret = null;
         if ($user) {
-            $ret = (! $user->isSuperAdmin() && ! $user->isAdmin()) ? $user->id : 0;
+            //$ret = (! $user->isSuperAdmin() && ! $user->isAdmin()) ? $user->id : 0;
+            $ret = (! $user->group == 1 && ! $user->group == 2) ? $user->id : 0;
         }
-
         return $ret;
     }
 
@@ -61,18 +50,22 @@ class Controller extends BaseController
 
     /**
      * Upload image on server.
+     * $imageFile - the file to upload
+     * $imageSubdir is the subdir in /storage/app/public/images/..
      *
-     * @param  $imageFile - the file to upload
-     * @param  $imageName - the file name
-     * @param  $imageSubdir - the subdir in /storage/app/public/images/..
+     * @param  array $imageFile
+     * @param  string $imageName
+     * @param  string $imageSubdir
+     * @param  string $imageWidth
+     * @param  string $thumbWidth
      * @return void
      */
-    public function uploadImageOnServer($imageFile, $imageName, $imageSubdir, $imageWidth, $thumbWidth)
+    public static function uploadImageOnServer($imageFile, $imageName, $imageSubdir, $imageWidth, $thumbWidth)
     {
 
         // Create dir if not exist (in /storage/app/public/images/..)
-        if (! \Storage::disk('public')->has('images/'.$imageSubdir.'/')) {
-            \Storage::disk('public')->makeDirectory('images/'.$imageSubdir.'/');
+        if (! Storage::disk('public')->has('images/'.$imageSubdir.'/')) {
+            Storage::disk('public')->makeDirectory('images/'.$imageSubdir.'/');
         }
 
         $destinationPath = 'app/public/images/'.$imageSubdir.'/';
@@ -80,7 +73,7 @@ class Controller extends BaseController
         // Resize the image with Intervention - http://image.intervention.io/api/resize
         // -  resize and store the image to a width of 300 and constrain aspect ratio (auto height)
         // - save file as jpg with medium quality
-        $image = \Image::make($imageFile->getRealPath())
+        $image = Image::make($imageFile->getRealPath())
                                 ->resize($imageWidth, null,
                                     function ($constraint) {
                                         $constraint->aspectRatio();
