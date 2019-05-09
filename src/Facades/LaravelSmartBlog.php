@@ -1,6 +1,6 @@
 <?php
 
-namespace DavideCasiraghi\LaravelSmartBlog;
+namespace DavideCasiraghi\LaravelSmartBlog\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

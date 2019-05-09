@@ -2,6 +2,7 @@
 
 namespace DavideCasiraghi\LaravelSmartBlog;
 
+use Carbon\Carbon;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelSmartBlogServiceProvider extends ServiceProvider
@@ -15,9 +16,11 @@ class LaravelSmartBlogServiceProvider extends ServiceProvider
          * Optional methods to load your package assets
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-smart-blog');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-smart-blog');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-smart-blog');
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+
+        $this->app['router']->aliasMiddleware('admin', \DavideCasiraghi\LaravelSmartBlog\Http\Middleware\Admin::class);
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -41,6 +44,25 @@ class LaravelSmartBlogServiceProvider extends ServiceProvider
 
             // Registering package commands.
             // $this->commands([]);
+            
+            /* - Migrations -
+               create a migration instance for each .php.stub file eg.
+               create_continents_table.php.stub --->  2019_04_28_190434761474_create_continents_table.php
+            */
+            $migrations = [
+                     'CreateCategoriesTable' => 'create_categories_table',
+                     'CreateCategoryTranslationsTable' => 'create_category_translations_table',
+                     'CreatePostsTable' => 'create_posts_table',
+                     'CreatePostTranslationsTable' => 'post_translations',
+                 ];
+                 
+             foreach ($migrations as $migrationFunctionName => $migrationFileName) {
+                 if (! class_exists($migrationFunctionName)) {
+                     $this->publishes([
+                             __DIR__.'/../database/migrations/'.$migrationFileName.'.php.stub' => database_path('migrations/'.Carbon::now()->format('Y_m_d_Hmsu').'_'.$migrationFileName.'.php'),
+                         ], 'migrations');
+                 }
+             }
         }
     }
 
