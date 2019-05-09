@@ -29,21 +29,21 @@ class PostTranslationControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
         $post = factory(Post::class)->create([
-                            'name' => 'Regular Jams',
+                            'title' => 'Regular Jams',
                             'slug' => 'regular-jams',
                         ]);
 
         $data = [
             'category_id' => $post->id,
             'language_code' => 'es',
-            'name' => 'Spanish category name',
+            'title' => 'Spanish post title',
         ];
 
         $response = $this
             ->followingRedirects()
             ->post('/postTranslations/store', $data);
 
-        $this->assertDatabaseHas('post_translations', ['locale' => 'es', 'name' => 'Spanish category name']);
+        $this->assertDatabaseHas('post_translations', ['locale' => 'es', 'title' => 'Spanish post title']);
         $response->assertViewIs('laravel-smart-blog::posts.index');
     }
 
@@ -63,14 +63,14 @@ class PostTranslationControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
         $post = factory(Post::class)->create([
-                            'name' => 'Regular Jams',
+                            'title' => 'Regular Jams',
                             'slug' => 'regular-jams',
                         ]);
 
         $data = [
             'category_id' => $post->id,
             'language_code' => 'es',
-            'name' => 'Spanish category name',
+            'title' => 'Spanish post title',
         ];
 
         $this->post('/postTranslations/store', $data);
@@ -85,14 +85,14 @@ class PostTranslationControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
         $post = factory(Post::class)->create([
-                            'name' => 'Regular Jams',
+                            'title' => 'Regular Jams',
                             'slug' => 'regular-jams',
                         ]);
 
         $data = [
             'category_id' => $post->id,
             'language_code' => 'es',
-            'name' => 'Spanish category name',
+            'title' => 'Spanish post title',
         ];
 
         $this->post('/postTranslations/store', $data);
@@ -101,13 +101,13 @@ class PostTranslationControllerTest extends TestCase
         $attributes = ([
             'category_translation_id' => 2,
             'language_code' => 'es',
-            'name' => 'Spanish category name updated',
+            'title' => 'Spanish post title updated',
           ]);
         $response = $this->followingRedirects()
                          ->put('/postTranslations/update', $attributes);
         $response->assertViewIs('laravel-smart-blog::posts.index')
                  ->assertStatus(200);
-        $this->assertDatabaseHas('post_translations', ['locale' => 'es', 'name' => 'Spanish category name updated']);
+        $this->assertDatabaseHas('post_translations', ['locale' => 'es', 'title' => 'Spanish post title updated']);
 
         // Update with no attributes - to not pass validation
         //$response = $this->followingRedirects()
@@ -120,14 +120,14 @@ class PostTranslationControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
         $post = factory(Post::class)->create([
-                            'name' => 'Regular Jams',
+                            'title' => 'Regular Jams',
                             'slug' => 'regular-jams',
                         ]);
 
         $data = [
             'category_id' => $post->id,
             'language_code' => 'es',
-            'name' => 'Spanish category name',
+            'title' => 'Spanish post title',
         ];
 
         $this->post('/postTranslations/store', $data);
@@ -136,7 +136,7 @@ class PostTranslationControllerTest extends TestCase
         $attributes = ([
             'category_translation_id' => 2,
             'language_code' => 'es',
-            'name' => '',
+            'title' => '',
           ]);
         $response = $this->followingRedirects()
                          ->put('/postTranslations/update', $attributes);
@@ -152,7 +152,7 @@ class PostTranslationControllerTest extends TestCase
         $data = [
             'category_id' => $post->id,
             'language_code' => 'es',
-            'name' => 'Spanish category name',
+            'title' => 'Spanish post title',
         ];
 
         $this->post('/postTranslations/store', $data);
