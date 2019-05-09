@@ -15,7 +15,7 @@ class CategoryControllerTest extends TestCase
     /** @test */
     public function it_runs_the_test_factory()
     {
-        $Category = factory(Category::class)->create([
+        $category = factory(Category::class)->create([
                             'name' => 'Regular Jams',
                             'slug' => 'regular-jams',
                         ]);
@@ -76,10 +76,10 @@ class CategoryControllerTest extends TestCase
     /** @test */
     public function it_displays_the_category_show_page()
     {
-        $this->authenticate();
+        $this->authenticateAsAdmin();
 
-        $Category = factory(Category::class)->create();
-        $response = $this->get('/categories/'.$Category->id);
+        $category = factory(Category::class)->create();
+        $response = $this->get('/categories/'.$category->id);
         $response->assertViewIs('laravel-smart-blog::categories.show')
                  ->assertStatus(200);
     }
@@ -89,8 +89,8 @@ class CategoryControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
 
-        $Category = factory(Category::class)->create();
-        $response = $this->get("/categories/{$Category->id}/edit");
+        $category = factory(Category::class)->create();
+        $response = $this->get("/categories/{$category->id}/edit");
         $response->assertViewIs('laravel-smart-blog::categories.edit')
                  ->assertStatus(200);
     }
@@ -99,7 +99,7 @@ class CategoryControllerTest extends TestCase
     public function it_updates_valid_category()
     {
         $this->authenticateAsAdmin();
-        $Category = factory(Category::class)->create();
+        $category = factory(Category::class)->create();
 
         $attributes = ([
             'name' => 'test name updated',
@@ -107,7 +107,7 @@ class CategoryControllerTest extends TestCase
           ]);
 
         $response = $this->followingRedirects()
-                         ->put('/categories/'.$Category->id, $attributes);
+                         ->put('/categories/'.$category->id, $attributes);
         $response->assertViewIs('laravel-smart-blog::categories.index')
                  ->assertStatus(200);
     }
@@ -117,8 +117,8 @@ class CategoryControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
 
-        $Category = factory(Category::class)->create();
-        $response = $this->put('/categories/'.$Category->id, []);
+        $category = factory(Category::class)->create();
+        $response = $this->put('/categories/'.$category->id, []);
         $response->assertSessionHasErrors();
     }
 
@@ -127,9 +127,9 @@ class CategoryControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
 
-        $Category = factory(Category::class)->create();
+        $category = factory(Category::class)->create();
 
-        $response = $this->delete('/categories/'.$Category->id);
+        $response = $this->delete('/categories/'.$category->id);
         $response->assertRedirect('/categories');
     }
 }
