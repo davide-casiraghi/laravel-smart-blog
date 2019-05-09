@@ -236,7 +236,7 @@ class PostController extends Controller
 
         // Set the default language to edit the post for the admin to English (to avoid bug with null titles)
         //App::setLocale('en');
-
+        
         $this->saveOnDb($request, $post);
 
         return redirect()->route('posts.index')

@@ -104,9 +104,12 @@ class PostControllerTest extends TestCase
         $post = factory(Post::class)->create([
             'category_id' => 1,
         ]);
-
+        
         $attributes = ([
             'title' => 'test title updated',
+            'body' => 'body updated',
+            'category_id' => 1,
+            'status'  => 1,
           ]);
 
         $response = $this->followingRedirects()
