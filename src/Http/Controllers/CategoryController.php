@@ -63,9 +63,6 @@ class CategoryController extends Controller
 
         $category = new Category();
 
-        // Set the default language to edit the post for the admin to English (to avoid bug with null titles)
-        App::setLocale('en');
-
         $this->saveOnDb($request, $category);
 
         return redirect()->route('categories.index')
@@ -91,10 +88,6 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-
-        // Set the default language to edit the post for the admin to English (to avoid bug with null titles)
-        //App::setLocale('en');
-
         return view('laravel-smart-blog::categories.edit', compact('category'));
     }
 
@@ -110,9 +103,6 @@ class CategoryController extends Controller
         request()->validate([
             'name' => 'required',
         ]);
-
-        // Set the default language to edit the post for the admin to English (to avoid bug with null titles)
-        App::setLocale('en');
 
         $this->saveOnDb($request, $category);
 
