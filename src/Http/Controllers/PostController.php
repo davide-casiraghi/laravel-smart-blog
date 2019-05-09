@@ -44,7 +44,8 @@ class PostController extends Controller
      */
     public function index(Request $request)
     {
-        $categories = Category::getCategoriesArray();
+        //$categories = Category::getCategoriesArray();
+        $categories = Category::listsTranslations('name')->pluck('name', 'id');
 
         $searchKeywords = $request->input('keywords');
         $searchCategory = $request->input('category_id');
@@ -100,7 +101,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        $categories = Category::getCategoriesArray();
+        //$categories = Category::getCategoriesArray();
+        $categories = Category::listsTranslations('name')->pluck('name', 'id');
 
         return view('laravel-smart-blog::posts.create')->with('categories', $categories);
     }
@@ -210,7 +212,8 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        $categories = Category::getCategoriesArray();
+        //$categories = Category::getCategoriesArray();
+        $categories = Category::listsTranslations('name')->pluck('name', 'id');
 
         return view('laravel-smart-blog::posts.edit', compact('post'))->with('categories', $categories);
     }
