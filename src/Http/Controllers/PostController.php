@@ -5,18 +5,18 @@ namespace DavideCasiraghi\LaravelSmartBlog\Http\Controllers;
 use DavideCasiraghi\LaravelSmartBlog\Models\Post;
 use Validator;
 use DavideCasiraghi\LaravelSmartBlog\Models\Category;
-use App\Classes\CardClass;
+// use App\Classes\CardClass;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Classes\ColumnsClass;
-use App\Classes\GalleryClass;
-use App\Classes\AccordionClass;
-use App\Classes\StatsDonateClass;
-use App\Classes\PaypalButtonClass;
+// use App\Classes\ColumnsClass;
+// use App\Classes\GalleryClass;
+// use App\Classes\AccordionClass;
+// use App\Classes\StatsDonateClass;
+// use App\Classes\PaypalButtonClass;
 use Illuminate\Support\Facades\DB;
-use App\Classes\CardsCarouselClass;
+// use App\Classes\CardsCarouselClass;
 use Illuminate\Support\Facades\App;
-use App\Classes\CommunityGoalsClass;
+// use App\Classes\CommunityGoalsClass;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class PostController extends Controller
@@ -147,7 +147,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-
+/*
         // Accordion
         $accordionClass = new AccordionClass();
         $post->body = $accordionClass->getAccordion($post->body);
@@ -195,9 +195,7 @@ class PostController extends Controller
         $post->body = $galleryClass->getGallery($post->body, $storagePath, $publicPath);
         $post->before_content = $galleryClass->getGallery($post->before_content, $storagePath, $publicPath);
         $post->after_content = $galleryClass->getGallery($post->after_content, $storagePath, $publicPath);
-
-        // Set the default language to edit the post for the admin to English (to avoid bug with null titles)
-        //App::setLocale('en');
+*/
 
         return view('laravel-smart-blog::posts.show', compact('post'));
     }
