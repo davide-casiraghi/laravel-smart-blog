@@ -1,4 +1,4 @@
-@extends('laravel-events-calendar::categoryTranslations.layout')
+@extends('laravel-smart-blog::categoryTranslations.layout')
 
 @section('content')
     <div class="container max-w-md px-0">

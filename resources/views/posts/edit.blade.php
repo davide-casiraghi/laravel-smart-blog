@@ -1,4 +1,4 @@
-@extends('laravel-events-calendar::posts.layout')
+@extends('laravel-smart-blog::posts.layout')
 
 
 @section('content')

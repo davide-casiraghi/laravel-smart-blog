@@ -1,4 +1,4 @@
-@extends('laravel-events-calendar::postTranslations.layout')
+@extends('laravel-smart-blog::postTranslations.layout')
 
 
 @section('content')

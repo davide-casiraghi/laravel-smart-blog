@@ -1,4 +1,4 @@
-@extends('laravel-events-calendar::categories.layout')
+@extends('laravel-smart-blog::categories.layout')
 
 
 @section('content')
