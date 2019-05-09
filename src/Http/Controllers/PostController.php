@@ -83,7 +83,7 @@ class PostController extends Controller
 
         //dd($posts);
 
-        return view('posts.index', compact('posts'))
+        return view('laravel-smart-blog::posts.index', compact('posts'))
             ->with('i', (request()->input('page', 1) - 1) * 20)
             ->with('categories', $categories)
             ->with('searchKeywords', $searchKeywords)
@@ -102,7 +102,7 @@ class PostController extends Controller
     {
         $categories = Category::getCategoriesArray();
 
-        return view('posts.create')->with('categories', $categories);
+        return view('laravel-smart-blog::posts.create')->with('categories', $categories);
     }
 
     /***************************************************************************/
@@ -199,7 +199,7 @@ class PostController extends Controller
         // Set the default language to edit the post for the admin to English (to avoid bug with null titles)
         //App::setLocale('en');
 
-        return view('posts.show', compact('post'));
+        return view('laravel-smart-blog::posts.show', compact('post'));
     }
 
     /***************************************************************************/
@@ -214,7 +214,7 @@ class PostController extends Controller
     {
         $categories = Category::getCategoriesArray();
 
-        return view('posts.edit', compact('post'))->with('categories', $categories);
+        return view('laravel-smart-blog::posts.edit', compact('post'))->with('categories', $categories);
     }
 
     /***************************************************************************/

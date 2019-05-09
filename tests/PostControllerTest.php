@@ -16,12 +16,12 @@ class PostControllerTest extends TestCase
     public function it_runs_the_test_factory()
     {
         $post = factory(Post::class)->create([
-                            'name' => 'Regular Jams',
+                            'title' => 'Regular Jams',
                             'slug' => 'regular-jams',
                         ]);
         $this->assertDatabaseHas('post_translations', [
                                 'locale' => 'en',
-                                'name' => 'Regular Jams',
+                                'title' => 'Regular Jams',
                                 'slug' => 'regular-jams',
                 ]);
     }
