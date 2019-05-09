@@ -40,7 +40,7 @@ class CategoryTranslationController extends Controller
     {
         $selectedLocaleName = $this->getSelectedLocaleName($languageCode);
 
-        return view('categoryTranslations.create')
+        return view('laravel-smart-blog::categoryTranslations.create')
                 ->with('categoryId', $categoryId)
                 ->with('languageCode', $languageCode)
                 ->with('selectedLocaleName', $selectedLocaleName);
@@ -63,7 +63,7 @@ class CategoryTranslationController extends Controller
 
         $selectedLocaleName = $this->getSelectedLocaleName($languageCode);
 
-        return view('categoryTranslations.edit', compact('categoryTranslation'))
+        return view('laravel-smart-blog::categoryTranslations.edit', compact('categoryTranslation'))
                     ->with('categoryId', $categoryId)
                     ->with('languageCode', $languageCode)
                     ->with('selectedLocaleName', $selectedLocaleName);
