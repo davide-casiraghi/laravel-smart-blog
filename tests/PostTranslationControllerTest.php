@@ -29,14 +29,15 @@ class PostTranslationControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
         $post = factory(Post::class)->create([
-                            'title' => 'Regular Jams',
-                            'slug' => 'regular-jams',
+                            'title' => 'English post title',
+                            'slug' => 'english-post-title',
                         ]);
 
         $data = [
-            'category_id' => $post->id,
+            'post_id' => $post->id,
             'language_code' => 'es',
             'title' => 'Spanish post title',
+            'body' => 'Spanish post body',
         ];
 
         $response = $this
@@ -68,9 +69,10 @@ class PostTranslationControllerTest extends TestCase
                         ]);
 
         $data = [
-            'category_id' => $post->id,
+            'post_id' => $post->id,
             'language_code' => 'es',
             'title' => 'Spanish post title',
+            'body' => 'Spanish post body',
         ];
 
         $this->post('/postTranslations/store', $data);
@@ -90,9 +92,10 @@ class PostTranslationControllerTest extends TestCase
                         ]);
 
         $data = [
-            'category_id' => $post->id,
+            'post_id' => $post->id,
             'language_code' => 'es',
             'title' => 'Spanish post title',
+            'body' => 'Spanish post body',
         ];
 
         $this->post('/postTranslations/store', $data);
@@ -102,6 +105,7 @@ class PostTranslationControllerTest extends TestCase
             'category_translation_id' => 2,
             'language_code' => 'es',
             'title' => 'Spanish post title updated',
+            'body' => 'Spanish post body updated',
           ]);
         $response = $this->followingRedirects()
                          ->put('/postTranslations/update', $attributes);
@@ -125,9 +129,10 @@ class PostTranslationControllerTest extends TestCase
                         ]);
 
         $data = [
-            'category_id' => $post->id,
+            'post_id' => $post->id,
             'language_code' => 'es',
             'title' => 'Spanish post title',
+            'body' => 'Spanish post body',
         ];
 
         $this->post('/postTranslations/store', $data);
@@ -137,6 +142,7 @@ class PostTranslationControllerTest extends TestCase
             'category_translation_id' => 2,
             'language_code' => 'es',
             'title' => '',
+            'body' => 'Spanish post body 2',
           ]);
         $response = $this->followingRedirects()
                          ->put('/postTranslations/update', $attributes);
@@ -150,9 +156,10 @@ class PostTranslationControllerTest extends TestCase
         $post = factory(Post::class)->create();
 
         $data = [
-            'category_id' => $post->id,
+            'post_id' => $post->id,
             'language_code' => 'es',
             'title' => 'Spanish post title',
+            'body' => 'Spanish post body',
         ];
 
         $this->post('/postTranslations/store', $data);
