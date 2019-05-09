@@ -1,9 +1,11 @@
-# Very short description of the package
+# Laravel Smart blog
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/davide-casiraghi/laravel-smart-blog.svg?style=flat-square)](https://packagist.org/packages/davide-casiraghi/laravel-smart-blog)
 [![Build Status](https://img.shields.io/travis/davide-casiraghi/laravel-smart-blog/master.svg?style=flat-square)](https://travis-ci.org/davide-casiraghi/laravel-smart-blog)
 [![Quality Score](https://img.shields.io/scrutinizer/g/davide-casiraghi/laravel-smart-blog.svg?style=flat-square)](https://scrutinizer-ci.com/g/davide-casiraghi/laravel-smart-blog)
-[![Total Downloads](https://img.shields.io/packagist/dt/davide-casiraghi/laravel-smart-blog.svg?style=flat-square)](https://packagist.org/packages/davide-casiraghi/laravel-smart-blog)
+<a href="https://codeclimate.com/github/davide-casiraghi/laravel-smart-blog/maintainability"><img src="https://api.codeclimate.com/v1/badges/ebfe603df3c163cee1f6/maintainability" /></a>
+[![GitHub last commit](https://img.shields.io/github/last-commit/davide-casiraghi/laravel-smart-blog.svg)](https://github.com/davide-casiraghi/laravel-smart-blog) 
+
 
 This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
 
