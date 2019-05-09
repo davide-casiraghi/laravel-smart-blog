@@ -99,10 +99,10 @@ class PostTranslationControllerTest extends TestCase
         ];
 
         $this->post('/postTranslations/store', $data);
-
+        
         // Update the translation
         $attributes = ([
-            'category_translation_id' => 2,
+            'post_translation_id' => 2,
             'language_code' => 'es',
             'title' => 'Spanish post title updated',
             'body' => 'Spanish post body updated',
@@ -120,7 +120,7 @@ class PostTranslationControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_does_not_update_invalid_category()
+    public function it_does_not_update_invalid_post_translation()
     {
         $this->authenticateAsAdmin();
         $post = factory(Post::class)->create([
