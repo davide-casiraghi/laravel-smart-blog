@@ -7,7 +7,7 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/davide-casiraghi/laravel-smart-blog.svg)](https://github.com/davide-casiraghi/laravel-smart-blog) 
 
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+A multi language blog package for Laravel.
 
 ## Installation
 
