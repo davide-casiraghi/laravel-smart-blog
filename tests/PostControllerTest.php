@@ -101,7 +101,9 @@ class PostControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
         $category = factory(Category::class)->create();
-        $post = factory(Post::class)->create();
+        $post = factory(Post::class)->create([
+            'category_id' => 1,
+        ]);
 
         $attributes = ([
             'title' => 'test title updated',
