@@ -22,11 +22,12 @@ class Controller extends BaseController
      *
      * @return int $ret
      */
-     public function getLoggedUser()
-     {
-         $ret = Auth::user();
-         return $ret;
-     }
+    public function getLoggedUser()
+    {
+        $ret = Auth::user();
+
+        return $ret;
+    }
 
     // **********************************************************************
 
@@ -43,6 +44,7 @@ class Controller extends BaseController
             //$ret = (! $user->isSuperAdmin() && ! $user->isAdmin()) ? $user->id : 0;
             $ret = (! $user->group == 1 && ! $user->group == 2) ? $user->id : 0;
         }
+
         return $ret;
     }
 

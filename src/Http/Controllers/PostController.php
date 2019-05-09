@@ -2,20 +2,20 @@
 
 namespace DavideCasiraghi\LaravelSmartBlog\Http\Controllers;
 
-use DavideCasiraghi\LaravelSmartBlog\Models\Post;
 use Validator;
-use DavideCasiraghi\LaravelSmartBlog\Models\Category;
-// use App\Classes\CardClass;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+// use App\Classes\CardClass;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\App;
 // use App\Classes\ColumnsClass;
 // use App\Classes\GalleryClass;
 // use App\Classes\AccordionClass;
 // use App\Classes\StatsDonateClass;
 // use App\Classes\PaypalButtonClass;
-use Illuminate\Support\Facades\DB;
+use DavideCasiraghi\LaravelSmartBlog\Models\Post;
 // use App\Classes\CardsCarouselClass;
-use Illuminate\Support\Facades\App;
+use DavideCasiraghi\LaravelSmartBlog\Models\Category;
 // use App\Classes\CommunityGoalsClass;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -148,55 +148,55 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-/*
-        // Accordion
-        $accordionClass = new AccordionClass();
-        $post->body = $accordionClass->getAccordion($post->body);
-        $post->before_content = $accordionClass->getAccordion($post->before_content);
-        $post->after_content = $accordionClass->getAccordion($post->after_content);
-
-        // Card
-        $cardClass = new CardClass();
-        $post->body = $cardClass->getCard($post->body);
-        $post->before_content = $cardClass->getCard($post->before_content);
-        $post->after_content = $cardClass->getCard($post->after_content);
-
-        // Category Columns
-        $cardsCarouselClass = new CardsCarouselClass();
-        $post->body = $cardsCarouselClass->getColumns($post->body);
-        $post->before_content = $cardsCarouselClass->getColumns($post->before_content);
-        $post->after_content = $cardsCarouselClass->getColumns($post->after_content);
-
-        // Category Columns
-        $columnClass = new ColumnsClass();
-        $post->body = $columnClass->getColumns($post->body);
-        $post->before_content = $columnClass->getColumns($post->before_content);
-        $post->after_content = $columnClass->getColumns($post->after_content);
-
-        // Stats Donate
-        $statsDonateClass = new StatsDonateClass();
-        $post->body = $statsDonateClass->getStatsDonate($post->body);
-        $post->before_content = $statsDonateClass->getStatsDonate($post->before_content);
-        $post->after_content = $statsDonateClass->getStatsDonate($post->after_content);
-
-        // Stats Donate
-        $communityGoalsClass = new CommunityGoalsClass();
-        $post->body = $communityGoalsClass->getCommunityGoals($post->body);
-
-        // Paypal Button
-        $paypalButton = new PaypalButtonClass();
-        $post->body = $paypalButton->getPaypalButton($post->body);
-
-        // Gallery
-        $storagePath = storage_path('app/public');
-        $publicPath = public_path();
-        //dump($storagePath,$publicPath);
-        $galleryClass = new GalleryClass();
-        //dump($post->body);
-        $post->body = $galleryClass->getGallery($post->body, $storagePath, $publicPath);
-        $post->before_content = $galleryClass->getGallery($post->before_content, $storagePath, $publicPath);
-        $post->after_content = $galleryClass->getGallery($post->after_content, $storagePath, $publicPath);
-*/
+        /*
+                // Accordion
+                $accordionClass = new AccordionClass();
+                $post->body = $accordionClass->getAccordion($post->body);
+                $post->before_content = $accordionClass->getAccordion($post->before_content);
+                $post->after_content = $accordionClass->getAccordion($post->after_content);
+        
+                // Card
+                $cardClass = new CardClass();
+                $post->body = $cardClass->getCard($post->body);
+                $post->before_content = $cardClass->getCard($post->before_content);
+                $post->after_content = $cardClass->getCard($post->after_content);
+        
+                // Category Columns
+                $cardsCarouselClass = new CardsCarouselClass();
+                $post->body = $cardsCarouselClass->getColumns($post->body);
+                $post->before_content = $cardsCarouselClass->getColumns($post->before_content);
+                $post->after_content = $cardsCarouselClass->getColumns($post->after_content);
+        
+                // Category Columns
+                $columnClass = new ColumnsClass();
+                $post->body = $columnClass->getColumns($post->body);
+                $post->before_content = $columnClass->getColumns($post->before_content);
+                $post->after_content = $columnClass->getColumns($post->after_content);
+        
+                // Stats Donate
+                $statsDonateClass = new StatsDonateClass();
+                $post->body = $statsDonateClass->getStatsDonate($post->body);
+                $post->before_content = $statsDonateClass->getStatsDonate($post->before_content);
+                $post->after_content = $statsDonateClass->getStatsDonate($post->after_content);
+        
+                // Stats Donate
+                $communityGoalsClass = new CommunityGoalsClass();
+                $post->body = $communityGoalsClass->getCommunityGoals($post->body);
+        
+                // Paypal Button
+                $paypalButton = new PaypalButtonClass();
+                $post->body = $paypalButton->getPaypalButton($post->body);
+        
+                // Gallery
+                $storagePath = storage_path('app/public');
+                $publicPath = public_path();
+                //dump($storagePath,$publicPath);
+                $galleryClass = new GalleryClass();
+                //dump($post->body);
+                $post->body = $galleryClass->getGallery($post->body, $storagePath, $publicPath);
+                $post->before_content = $galleryClass->getGallery($post->before_content, $storagePath, $publicPath);
+                $post->after_content = $galleryClass->getGallery($post->after_content, $storagePath, $publicPath);
+        */
 
         return view('laravel-smart-blog::posts.show', compact('post'));
     }
@@ -236,7 +236,7 @@ class PostController extends Controller
 
         // Set the default language to edit the post for the admin to English (to avoid bug with null titles)
         //App::setLocale('en');
-        
+
         $this->saveOnDb($request, $post);
 
         return redirect()->route('posts.index')
