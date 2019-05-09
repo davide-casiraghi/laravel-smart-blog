@@ -13,11 +13,12 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(DavideCasiraghi\LaravelSmartBlog\Models\Category::class, function (Faker $faker) {
-    $event_category_name = $faker->name;
-    $slug = Str::slug($event_category_name, '-').rand(10000, 100000);
+    $category_name = $faker->name;
+    $slug = Str::slug($category_name, '-').rand(10000, 100000);
 
     return [
-        'name:en' => $event_category_name,
+        'name:en' => $category_name,
         'slug:en' => $slug,
+        'description:en' => $faker->paragraph,
     ];
 });

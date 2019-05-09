@@ -13,13 +13,14 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(DavideCasiraghi\LaravelSmartBlog\Models\CategoryTranslation::class, function (Faker $faker) {
-    $event_category_name = $faker->name;
-    $slug = Str::slug($event_category_name, '-').rand(10000, 100000);
+    $category_name = $faker->name;
+    $slug = Str::slug($category_name, '-').rand(10000, 100000);
 
     return [
-        'name' => $event_category_name,
+        'name' => $category_name,
         'slug' => $slug,
-        'event_category_id' => 1,
+        'description' => $faker->paragraph,
+        'category_id' => 1,
         'locale' => 'en',
     ];
 });
