@@ -21,13 +21,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class PostController extends Controller
 {
-    /***************************************************************************/
 
-    /**
-     * Constructor.
-     *
-     * @return void
-     */
     public function __construct()
     {
 
