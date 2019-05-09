@@ -2,7 +2,6 @@
 
 namespace DavideCasiraghi\LaravelSmartBlog\Tests;
 
-use Illuminate\Foundation\Auth\User;
 use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelSmartBlog\Models\Post;
 use DavideCasiraghi\LaravelSmartBlog\Models\Category;
@@ -50,7 +49,7 @@ class PostControllerTest extends TestCase
     {
         $this->authenticateAsAdmin();
         $category = factory(Category::class)->create();
-        
+
         $data = [
             'title' => 'test title',
             'body' => 'test body',
@@ -104,7 +103,7 @@ class PostControllerTest extends TestCase
         $post = factory(Post::class)->create([
             'category_id' => 1,
         ]);
-        
+
         $attributes = ([
             'title' => 'test title updated',
             'body' => 'body updated',

@@ -44,7 +44,7 @@ class LaravelSmartBlogServiceProvider extends ServiceProvider
 
             // Registering package commands.
             // $this->commands([]);
-            
+
             /* - Migrations -
                create a migration instance for each .php.stub file eg.
                create_continents_table.php.stub --->  2019_04_28_190434761474_create_continents_table.php
@@ -55,14 +55,14 @@ class LaravelSmartBlogServiceProvider extends ServiceProvider
                      'CreatePostsTable' => 'create_posts_table',
                      'CreatePostTranslationsTable' => 'create_post_translations_table',
                  ];
-                 
-             foreach ($migrations as $migrationFunctionName => $migrationFileName) {
-                 if (! class_exists($migrationFunctionName)) {
-                     $this->publishes([
+
+            foreach ($migrations as $migrationFunctionName => $migrationFileName) {
+                if (! class_exists($migrationFunctionName)) {
+                    $this->publishes([
                              __DIR__.'/../database/migrations/'.$migrationFileName.'.php.stub' => database_path('migrations/'.Carbon::now()->format('Y_m_d_Hmsu').'_'.$migrationFileName.'.php'),
                          ], 'migrations');
-                 }
-             }
+                }
+            }
         }
     }
 

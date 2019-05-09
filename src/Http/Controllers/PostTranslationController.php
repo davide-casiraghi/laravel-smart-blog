@@ -2,11 +2,11 @@
 
 namespace DavideCasiraghi\LaravelSmartBlog\Http\Controllers;
 
-use DavideCasiraghi\LaravelSmartBlog\Models\Post;
 use Validator;
-use DavideCasiraghi\LaravelSmartBlog\Models\PostTranslation;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use DavideCasiraghi\LaravelSmartBlog\Models\Post;
+use DavideCasiraghi\LaravelSmartBlog\Models\PostTranslation;
 
 class PostTranslationController extends Controller
 {
