@@ -7,7 +7,6 @@ use DavideCasiraghi\LaravelSmartBlog\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\App;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class CategoryController extends Controller
@@ -30,7 +29,7 @@ class CategoryController extends Controller
         // Countries available for translations
         $countriesAvailableForTranslations = LaravelLocalization::getSupportedLocales();
 
-        return view('categories.index', compact('categories'))
+        return view('laravel-smart-blog::categories.index', compact('categories'))
             ->with('i', (request()->input('page', 1) - 1) * 5)
             ->with('countriesAvailableForTranslations', $countriesAvailableForTranslations);
     }
@@ -42,7 +41,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        return view('laravel-smart-blog::categories.create');
     }
 
     /**
@@ -81,7 +80,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('categories.show', compact('category'));
+        return view('laravel-smart-blog::categories.show', compact('category'));
     }
 
     /**
@@ -96,7 +95,7 @@ class CategoryController extends Controller
         // Set the default language to edit the post for the admin to English (to avoid bug with null titles)
         //App::setLocale('en');
 
-        return view('categories.edit', compact('category'));
+        return view('laravel-smart-blog::categories.edit', compact('category'));
     }
 
     /**
