@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
 
             $table->integer('category_id')->nullable();
             $table->string('status')->default('2');
-            $table->boolean('featured')->default(0);
+            $table->boolean('featured')->nullable();
 
             $table->string('introimage')->nullable();
             $table->string('introimage_alt')->nullable();

@@ -52,7 +52,6 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-
         // Validate form datas
         $validator = Validator::make($request->all(), [
                 'name' => 'required',

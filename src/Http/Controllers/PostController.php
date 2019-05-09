@@ -117,7 +117,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-
         // Validate form datas
         $validator = Validator::make($request->all(), [
                 'title' => 'required',
@@ -131,7 +130,7 @@ class PostController extends Controller
         $post = new Post();
 
         // Set the default language to edit the post for the admin to English (to avoid bug with null titles)
-        App::setLocale('en');
+        //App::setLocale('en'); //removed for the package!!! maybe we still need it!!!
 
         $this->saveOnDb($request, $post);
 
@@ -236,7 +235,7 @@ class PostController extends Controller
         ]);
 
         // Set the default language to edit the post for the admin to English (to avoid bug with null titles)
-        App::setLocale('en');
+        //App::setLocale('en');
 
         $this->saveOnDb($request, $post);
 
