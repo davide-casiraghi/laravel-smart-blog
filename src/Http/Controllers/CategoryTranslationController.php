@@ -4,8 +4,8 @@ namespace DavideCasiraghi\LaravelSmartBlog\Http\Controllers;
 
 use Validator;
 use Illuminate\Support\Str;
-use DavideCasiraghi\LaravelSmartBlog\Models\CategoryTranslation;
 use Illuminate\Http\Request;
+use DavideCasiraghi\LaravelSmartBlog\Models\CategoryTranslation;
 
 class CategoryTranslationController extends Controller
 {

@@ -10,7 +10,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id');
-            
+
             $table->integer('created_by')->nullable();
 
             $table->integer('category_id')->nullable();

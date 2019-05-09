@@ -99,7 +99,7 @@ class PostTranslationControllerTest extends TestCase
         ];
 
         $this->post('/postTranslations/store', $data);
-        
+
         // Update the translation
         $attributes = ([
             'post_translation_id' => 2,

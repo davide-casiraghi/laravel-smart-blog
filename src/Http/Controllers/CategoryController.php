@@ -3,10 +3,10 @@
 namespace DavideCasiraghi\LaravelSmartBlog\Http\Controllers;
 
 use Validator;
-use DavideCasiraghi\LaravelSmartBlog\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use DavideCasiraghi\LaravelSmartBlog\Models\Category;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class CategoryController extends Controller

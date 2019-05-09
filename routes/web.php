@@ -1,7 +1,7 @@
 <?php
 
     Route::group(['namespace' => 'DavideCasiraghi\LaravelSmartBlog\Http\Controllers', 'middleware' => 'web'], function () {
-        
+
         /* Post Categories */
         Route::resource('categories', 'CategoryController');
 
@@ -22,7 +22,4 @@
         Route::post('/postTranslations/store', 'PostTranslationController@store')->name('postTranslations.store');
         Route::put('/postTranslations/update', 'PostTranslationController@update')->name('postTranslations.update');
         Route::delete('/postTranslations/destroy/{postTranslationId}', 'PostTranslationController@destroy')->name('postTranslations.destroy');
-
     });
-
-    
