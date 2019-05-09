@@ -49,17 +49,14 @@ class PostControllerTest extends TestCase
     public function it_stores_a_valid_post()
     {
         $this->authenticateAsAdmin();
-        $category = factory(Category::class)->create([
-                            'name' => 'Regular Jams',
-                            'slug' => 'regular-jams',
-                        ]);
+        $category = factory(Category::class)->create();
+        
         $data = [
             'title' => 'test title',
             'body' => 'test body',
             'category_id' => 1,
             'status'  => 1,
         ];
-
         $response = $this
             ->followingRedirects()
             ->post('/posts', $data);
