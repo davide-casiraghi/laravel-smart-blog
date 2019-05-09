@@ -53,7 +53,7 @@ class LaravelSmartBlogServiceProvider extends ServiceProvider
                      'CreateCategoriesTable' => 'create_categories_table',
                      'CreateCategoryTranslationsTable' => 'create_category_translations_table',
                      'CreatePostsTable' => 'create_posts_table',
-                     'CreatePostTranslationsTable' => 'post_translations',
+                     'CreatePostTranslationsTable' => 'create_post_translations_table',
                  ];
                  
              foreach ($migrations as $migrationFunctionName => $migrationFileName) {
