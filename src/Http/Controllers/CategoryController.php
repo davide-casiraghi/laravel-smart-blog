@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace DavideCasiraghi\LaravelSmartBlog\Http\Controllers;
 
 use Validator;
-use App\Category;
+use DavideCasiraghi\LaravelSmartBlog\Models\Category;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -76,7 +76,7 @@ class CategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Category  $category
+     * @param  \DavideCasiraghi\LaravelSmartBlog\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function show(Category $category)
@@ -103,7 +103,7 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Category  $category
+     * @param  \DavideCasiraghi\LaravelSmartBlog\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
@@ -124,7 +124,7 @@ class CategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Category  $category
+     * @param  \DavideCasiraghi\LaravelSmartBlog\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
     public function destroy(Category $category)

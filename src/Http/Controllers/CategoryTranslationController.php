@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace DavideCasiraghi\LaravelSmartBlog\Http\Controllers;
 
 use Validator;
 use Illuminate\Support\Str;
-use App\CategoryTranslation;
+use DavideCasiraghi\LaravelSmartBlog\Models\CategoryTranslation;
 use Illuminate\Http\Request;
 
 class CategoryTranslationController extends Controller
@@ -106,7 +106,7 @@ class CategoryTranslationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\CategoryTranslation  $categoryTranslation
+     * @param  \DavideCasiraghi\LaravelSmartBlog\Models\CategoryTranslation  $categoryTranslation
      * @return \Illuminate\Http\Response
      */
     /*public function show(CategoryTranslation $categoryTranslation)

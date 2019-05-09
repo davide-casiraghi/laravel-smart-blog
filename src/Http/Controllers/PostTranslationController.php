@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace DavideCasiraghi\LaravelSmartBlog\Http\Controllers;
 
-use App\Post;
+use DavideCasiraghi\LaravelSmartBlog\Models\Post;
 use Validator;
-use App\PostTranslation;
+use DavideCasiraghi\LaravelSmartBlog\Models\PostTranslation;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace DavideCasiraghi\LaravelSmartBlog\Http\Controllers;
 
 use App\User;
 use Illuminate\Support\Facades\Auth;
