@@ -100,11 +100,11 @@ class PostControllerTest extends TestCase
     public function it_updates_valid_post()
     {
         $this->authenticateAsAdmin();
+        $category = factory(Category::class)->create();
         $post = factory(Post::class)->create();
 
         $attributes = ([
-            'name' => 'test name updated',
-            'slug' => 'test slug updated',
+            'title' => 'test title updated',
           ]);
 
         $response = $this->followingRedirects()
