@@ -50,6 +50,7 @@ class LaravelSmartBlogServiceProvider extends ServiceProvider
                create_continents_table.php.stub --->  2019_04_28_190434761474_create_continents_table.php
             */
             $migrations = [
+                     'CreateBlogsTable' => 'create_blogs_table',
                      'CreateCategoriesTable' => 'create_categories_table',
                      'CreateCategoryTranslationsTable' => 'create_category_translations_table',
                      'CreatePostsTable' => 'create_posts_table',
