@@ -6,6 +6,7 @@ use Validator;
 use Illuminate\Http\Request;
 use DavideCasiraghi\LaravelSmartBlog\Models\Blog;
 use DavideCasiraghi\LaravelSmartBlog\Models\Category;
+use DavideCasiraghi\LaravelSmartBlog\Models\Post;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class BlogController extends Controller
@@ -81,7 +82,12 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        return view('laravel-smart-blog::blogs.show', compact('blog'));
+        $category = Category::where('id', $blog->category_id)->get();
+        $posts = Post::where('category_id', $blog->category_id)->get();
+        
+        return view('laravel-smart-blog::blogs.show', compact('blog'))
+                    ->with('category', $category)
+                    ->with('posts', $posts);
     }
 
     /**

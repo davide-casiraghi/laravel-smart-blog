@@ -16,14 +16,18 @@
     @switch($blog->layout)
         @case(1)
             @include('laravel-smart-blog::partials.blogs.bootstrap-wall', [
-                  'blog' => $blog
+                  'blog' => $blog,
+                  'category' => $category,
+                  'posts' => $posts,
             ])
         @break
 
         @case(2)
-        @include('laravel-smart-blog::partials.blogs.pinterest-wall', [
-              'blog' => $blog
-        ])
+            @include('laravel-smart-blog::partials.blogs.pinterest-wall', [
+              'blog' => $blog,
+              'category' => $category,
+              'posts' => $posts,
+          ])
         @break
 
     @endswitch
