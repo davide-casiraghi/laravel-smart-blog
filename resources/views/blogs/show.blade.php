@@ -31,26 +31,5 @@
         @break
 
     @endswitch
-{{--
-    <div class="row">
-        <div class="col-12">
-            <div class="form-group">
-                <strong>Name:</strong>
-                {{ $category->name }}
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-group">
-                <strong>Slug:</strong>
-                {{ $category->slug }}
-            </div>
-        </div>
-        <div class="col-12">
-            <div class="form-group">
-                <strong>Description:</strong>
-                {{ $category->description }}
-            </div>
-        </div>
-    </div>
-    --}}
+
 @endsection
