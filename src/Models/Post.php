@@ -28,7 +28,7 @@ class Post extends Model
      * Return all the posts by category id in the language specified.
      *
      * @param  int $cat_id
-     * @return \App\Post
+     * @return \DavideCasiraghi\LaravelSmartBlog\Models\Post
      */
     public static function postsByCategory($cat_id)
     {
