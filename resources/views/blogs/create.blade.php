@@ -51,8 +51,28 @@
                              'required' => true,
                        ])
                    </div>
+                   
                 {{-- columns --}}
+                <div class="col-12">
+                   @include('laravel-smart-blog::partials.select', [
+                         'title' => __('general.columns'),
+                         'name' => 'columns',
+                         'placeholder' => __('general.select_layout'),
+                         'records' => [
+                             '1' => '1',
+                             '2' => '2',
+                             '3' => '3',
+                             '4' => '4',
+                         ],
+                         'liveSearch' => 'false',
+                         'mobileNativeMenu' => true,
+                         'seleted' => old('columns'),
+                         'required' => true,
+                   ])
+               </div>
+                
                 {{-- article_order --}}
+                
                 {{-- pagination --}}
                 {{-- featured_articles --}}
                 {{-- show_category_title --}}
@@ -68,7 +88,20 @@
                 {{-- show_modify_date --}}
                 {{-- show_publish_date --}}
                 {{-- show_read_more --}}
-                {{-- created_by --}}
+                <div class="col-12">
+                    @include('laravel-smart-blog::partials.checkbox', [
+                          'name' => 'show_read_more',
+                          'description' => __('views.blogs.show_read_more'),
+                          'value' => '',
+                          'required' => false,
+                    ])
+                </div>
+                
+                
+                
+                
+                
+                
                 
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.input', [
