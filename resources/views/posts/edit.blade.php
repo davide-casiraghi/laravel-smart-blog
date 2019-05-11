@@ -57,7 +57,7 @@
                         'name' => 'category_id',
                         'placeholder' => __('views.select_category'),
                         'records' => $categories,
-                        'seleted' => $post->category_id,
+                        'selected' => $post->category_id,
                         'liveSearch' => 'false',
                         'mobileNativeMenu' => true,
                         'required' => true,

@@ -45,7 +45,7 @@
                         'name' => 'category_id',
                         'placeholder' => __('views.filter_by_category'),
                         'records' => $categories,
-                        'seleted' => $searchCategory,
+                        'selected' => $searchCategory,
                         'liveSearch' => 'false',
                         'mobileNativeMenu' => true,
                     ])
