@@ -48,6 +48,8 @@ class BlogControllerTest extends TestCase
     public function it_stores_a_valid_blog()
     {
         $this->authenticateAsAdmin();
+        
+        $category = factory(\DavideCasiraghi\LaravelSmartBlog\Models\Category::class)->create();
         $user = User::first();
         
         $data = [

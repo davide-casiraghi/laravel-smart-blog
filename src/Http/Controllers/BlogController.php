@@ -59,7 +59,8 @@ class BlogController extends Controller
     {
         // Validate form datas
         $validator = Validator::make($request->all(), [
-                'name' => 'required',
+                'category_id' => 'required',
+                'layout' => 'required',
             ]);
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
@@ -69,8 +70,8 @@ class BlogController extends Controller
 
         $this->saveOnDb($request, $blog);
 
-        return redirect()->route('blog.index')
-                        ->with('success', __('messages.category_added_successfully'));
+        return redirect()->route('blogs.index')
+                        ->with('success', __('messages.blog_added_successfully'));
     }
 
     /**
@@ -108,12 +109,13 @@ class BlogController extends Controller
     public function update(Request $request, Blog $blog)
     {
         request()->validate([
-            'name' => 'required',
+            'category_id' => 'required',
+            'layout' => 'required',
         ]);
 
         $this->saveOnDb($request, $blog);
 
-        return redirect()->route('blog.index')
+        return redirect()->route('blogs.index')
                         ->with('success', __('messages.blog_updated_successfully'));
     }
 
@@ -141,9 +143,30 @@ class BlogController extends Controller
      */
     public function saveOnDb($request, $blog)
     {
-        $blog->name = $request->get('name');
-        $blog->description = $request->get('description');
+        $blog->category_id = $request->get('category_id');
+        $blog->layout = $request->get('layout');
+        $blog->columns = $request->get('columns');
+        $blog->article_order = $request->get('article_order');
         
+        $blog->pagination = $request->get('pagination');
+        $blog->featured_articles = $request->get('featured_articles');
+        $blog->show_category_title = $request->get('show_category_title');
+        $blog->show_category_subtitle = $request->get('show_category_subtitle');
+        $blog->show_category_description = $request->get('show_category_description');
+        $blog->show_category_image = $request->get('show_category_image');
+        
+        $blog->show_post_title = $request->get('show_post_title');
+        $blog->post_linked_titles = $request->get('post_linked_titles');
+        $blog->show_post_intro_text = $request->get('show_post_intro_text');
+        $blog->show_post_author = $request->get('show_post_author');
+        $blog->link_post_author = $request->get('link_post_author');
+        
+        $blog->show_create_date = $request->get('show_create_date');
+        $blog->show_modify_date = $request->get('show_modify_date');
+        $blog->show_publish_date = $request->get('show_publish_date');
+        $blog->show_read_more = $request->get('show_read_more');
+        
+        $blog->created_by = \Auth::user()->id;
 
         $blog->save();
     }

@@ -23,10 +23,13 @@
             @foreach ($blogs as $blog)
                 <div class="row bg-white shadow-1 rounded mb-3 pb-2 pt-3 mx-1">
                     {{-- Title --}}
-                        <div class="col-12 py-1 title">
+                        {{--<div class="col-12 py-1 title">
                             <h5 class="darkest-gray">{{ $category->translate('en')->name }}</h5>
-                        </div>
+                        </div>--}}
                         
+                        <div class="col-12 py-1 title">
+                            <h5 class="darkest-gray">{{ $blog->id }}</h5>
+                        </div>
                     
                         
                     {{-- Buttons --}}
