@@ -24,13 +24,13 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::latest()->paginate(5);
+        $categories = Category::latest()->paginate(10);
 
         // Countries available for translations
         $countriesAvailableForTranslations = LaravelLocalization::getSupportedLocales();
 
         return view('laravel-smart-blog::categories.index', compact('categories'))
-            ->with('i', (request()->input('page', 1) - 1) * 5)
+            ->with('i', (request()->input('page', 1) - 1) * 10)
             ->with('countriesAvailableForTranslations', $countriesAvailableForTranslations);
     }
 
@@ -129,7 +129,7 @@ class CategoryController extends Controller
      * Save/Update the record on DB.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return string $ret - the ordinal indicator (st, nd, rd, th)
+     * @return void
      */
     public function saveOnDb($request, $category)
     {
