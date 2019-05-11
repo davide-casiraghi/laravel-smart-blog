@@ -70,12 +70,10 @@ class PostController extends Controller
                 })
                 ->paginate(20);
         } else {
-            $posts = Post::select('id', 'title', 'category_id')->orderBy('title')->paginate(20);
+            $posts = Post::listsTranslations('title')->select('posts.id', 'title', 'category_id')->orderBy('title')->paginate(20);
         }
 
         //dd(DB::getQueryLog());
-
-        //dd($posts);
 
         return view('laravel-smart-blog::posts.index', compact('posts'))
             ->with('i', (request()->input('page', 1) - 1) * 20)

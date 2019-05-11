@@ -24,7 +24,8 @@
                 <div class="row bg-white shadow-1 rounded mb-3 pb-2 pt-3 mx-1">
                     {{-- Title --}}
                         <div class="col-12 py-1 title">
-                            <h5 class="darkest-gray">{{ $category->translate('en')->name }}</h5>
+                            {{--<h5 class="darkest-gray">{{ $category->translate('en')->name }}</h5>--}}
+                            <h5 class="darkest-gray">{{ $category->name }}
                         </div>
                         
                     {{-- Translations --}}
