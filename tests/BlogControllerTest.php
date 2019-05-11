@@ -43,10 +43,10 @@ class BlogControllerTest extends TestCase
     public function it_stores_a_valid_blog()
     {
         $this->authenticateAsAdmin();
-        
+
         $category = factory(\DavideCasiraghi\LaravelSmartBlog\Models\Category::class)->create();
         $user = User::first();
-        
+
         $data = [
             'category_id' => '1',
             'layout' => '1',
@@ -67,7 +67,7 @@ class BlogControllerTest extends TestCase
             'show_modify_date' => '1',
             'show_publish_date' => '1',
             'show_read_more' => '1',
-            'created_by' => $user->id,  
+            'created_by' => $user->id,
         ];
 
         $response = $this
@@ -102,7 +102,7 @@ class BlogControllerTest extends TestCase
     public function it_displays_the_blog_edit_page()
     {
         $this->authenticateAsAdmin();
-        
+
         $blog = factory(Blog::class)->create();
         $response = $this->get("/blogs/{$blog->id}/edit");
         $response->assertViewIs('laravel-smart-blog::blogs.edit')
@@ -136,7 +136,7 @@ class BlogControllerTest extends TestCase
             'show_modify_date' => '0',
             'show_publish_date' => '1',
             'show_read_more' => '1',
-            'created_by' => $user->id,  
+            'created_by' => $user->id,
           ]);
 
         $response = $this->followingRedirects()

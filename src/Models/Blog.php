@@ -17,8 +17,8 @@ class Blog extends Model
     /***************************************************************************/
 
     protected $fillable = [
-        'category_id', 
-        'layout', 
+        'category_id',
+        'layout',
         'columns',
         'article_order',
         'pagination',
@@ -40,6 +40,4 @@ class Blog extends Model
     ];
 
     /***************************************************************************/
-
-
 }

@@ -37,6 +37,6 @@ $factory->define(DavideCasiraghi\LaravelSmartBlog\Models\Blog::class, function (
         'show_modify_date' => '1',
         'show_publish_date' => '1',
         'show_read_more' => '1',
-        'created_by' => $user->id,    
+        'created_by' => $user->id,
     ];
 });
