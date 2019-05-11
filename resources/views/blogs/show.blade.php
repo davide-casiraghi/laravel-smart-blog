@@ -12,7 +12,17 @@
             </div>
         </div>
     </div>
+    
+    @switch($blog->layout)
+        @case(1)
+            First case...
+            @break
 
+        @case(2)
+            Second case...
+            @break
+
+    @endswitch
 {{--
     <div class="row">
         <div class="col-12">

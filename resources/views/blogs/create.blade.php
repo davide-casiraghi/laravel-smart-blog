@@ -39,8 +39,8 @@
                              'name' => 'layout',
                              'placeholder' => __('general.select_layout'),
                              'records' => [
-                                 '1' => 'layout_1',
-                                 '2' => 'layout_2',
+                                 '1' => 'Bootstrap Wall',
+                                 '2' => 'Pinterest Wall',
                              ],
                              'liveSearch' => 'false',
                              'mobileNativeMenu' => true,
