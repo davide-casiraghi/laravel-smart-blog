@@ -3,7 +3,7 @@
 <div class="row">
     
 @foreach ($posts as $key => $post)
-    <div class="col-3">
+    <div class="col-12">
         @if(!empty($post->image))
             <img class="ml-sm-3 float-sm-right img-fluid" alt="{{ $post->title }}" src="/storage/images/events_teaser/thumb_{{ $post->image }}">
         @else
@@ -12,7 +12,7 @@
             </div>
         @endif
     </div>
-    <div class="col-7">
+    <div class="col-12">
         
         <h4>{{ $post->title }}</h4>
             
