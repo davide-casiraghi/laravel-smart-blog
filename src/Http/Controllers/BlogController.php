@@ -43,7 +43,10 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('laravel-smart-blog::blogs.create');
+        $categories = Category::get();
+        
+        return view('laravel-smart-blog::blogs.create')
+            ->with('categories', $categories);
     }
     
     /**

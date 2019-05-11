@@ -20,7 +20,56 @@
         <form action="{{ route('categories.store') }}" method="POST">
             @csrf
 
+            {{-- category_id --}}
              <div class="row">
+                 <div class="col-12">
+                    @include('laravel-smart-blog::partials.select', [
+                          'title' => __('general.category'),
+                          'name' => 'category_id',
+                          'placeholder' => __('general.select_category'),
+                          'records' => $categories,
+                          'liveSearch' => 'false',
+                          'mobileNativeMenu' => true,
+                          'seleted' => old('category_id'),
+                          'required' => true,
+                    ])
+                </div>
+                
+                {{-- layout --}}
+                    <div class="col-12">
+                       @include('laravel-smart-blog::partials.select', [
+                             'title' => __('general.layout'),
+                             'name' => 'layout',
+                             'placeholder' => __('general.select_layout'),
+                             'records' => [
+                                 '1' => 'layout_1',
+                                 '2' => 'layout_2',
+                             ],
+                             'liveSearch' => 'false',
+                             'mobileNativeMenu' => true,
+                             'seleted' => old('layout'),
+                             'required' => true,
+                       ])
+                   </div>
+                {{-- columns --}}
+                {{-- article_order --}}
+                {{-- pagination --}}
+                {{-- featured_articles --}}
+                {{-- show_category_title --}}
+                {{-- show_category_subtitle --}}
+                {{-- show_category_description --}}
+                {{-- show_category_image --}}
+                {{-- show_post_title --}}
+                {{-- post_linked_titles --}}
+                {{-- show_post_intro_text --}}
+                {{-- show_post_author --}}
+                {{-- link_post_author --}}
+                {{-- show_create_date --}}
+                {{-- show_modify_date --}}
+                {{-- show_publish_date --}}
+                {{-- show_read_more --}}
+                {{-- created_by --}}
+                
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.input', [
                           'title' => __('general.name'),
