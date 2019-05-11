@@ -22,10 +22,9 @@
         Route::post('/postTranslations/store', 'PostTranslationController@store')->name('postTranslations.store');
         Route::put('/postTranslations/update', 'PostTranslationController@update')->name('postTranslations.update');
         Route::delete('/postTranslations/destroy/{postTranslationId}', 'PostTranslationController@destroy')->name('postTranslations.destroy');
-    
+
         /* Blog */
         Route::resource('blogs', 'BlogController');
-        
+
         //Route::get('/blog/{blogKind}/{categoryId}/', 'BlogController@index');
-        
     });
