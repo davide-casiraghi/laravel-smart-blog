@@ -24,6 +24,28 @@ class Category extends Model
 
     /***************************************************************************/
 
+    /**
+     * Return the post categories array
+     * the collection is transferred to an array to symulate the pluck behaviour,
+     * and get the category name translated or the relative fallbacks.
+     * (otherwise the pluck has empty names because doesn't fallback).
+     *
+     * @return array
+     */
+    public static function getCategoriesArray()
+    {
+        $ret = [];
+        $categories = self::get();
+
+        foreach ($categories as $key => $category) {
+            $ret[$category->id] = $category->name;
+        }
+
+        return $ret;
+    }
+    
+    /***************************************************************************/
+
     /*
      * Return the category name.
      *

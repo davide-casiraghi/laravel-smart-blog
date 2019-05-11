@@ -98,7 +98,7 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        $categories = Category::get();
+        $categories = Category::listsTranslations('name')->pluck('name', 'id');
 
         return view('laravel-smart-blog::blogs.edit', compact('blog'))
                     ->with('categories', $categories);

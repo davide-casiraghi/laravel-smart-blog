@@ -72,7 +72,7 @@ class PostController extends Controller
         } else {
             $posts = Post::listsTranslations('title')->select('posts.id', 'title', 'category_id')->orderBy('title')->paginate(20);
         }
-
+        
         //dd(DB::getQueryLog());
 
         return view('laravel-smart-blog::posts.index', compact('posts'))
@@ -204,6 +204,7 @@ class PostController extends Controller
     {
         //$categories = Category::getCategoriesArray();
         $categories = Category::listsTranslations('name')->pluck('name', 'id');
+        //$categories = Category::getCategoriesArray();
 
         return view('laravel-smart-blog::posts.edit', compact('post'))->with('categories', $categories);
     }
