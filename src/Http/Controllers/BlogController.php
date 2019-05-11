@@ -129,8 +129,8 @@ class BlogController extends Controller
     {
         $blog->delete();
 
-        return redirect()->route('categories.index')
-                        ->with('success', __('messages.category_deleted_successfully'));
+        return redirect()->route('blogs.index')
+                        ->with('success', __('messages.blog_deleted_successfully'));
     }
 
     /***************************************************************************/

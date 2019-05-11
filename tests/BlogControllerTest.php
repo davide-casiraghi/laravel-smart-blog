@@ -84,13 +84,13 @@ class BlogControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_does_not_store_invalid_category()
+    public function it_does_not_store_invalid_blog()
     {
         $this->authenticateAsAdmin();
-        $response = $this->post('/categories', []);
+        $response = $this->post('/blogs', []);
         $response->assertSessionHasErrors();
-        $this->assertNull(Category::first());
-    }*/
+        $this->assertNull(Blog::first());
+    }
 
     /** @test */
     /*public function it_displays_the_category_show_page()
@@ -142,7 +142,7 @@ class BlogControllerTest extends TestCase
     }*/
 
     /** @test */
-    /*public function it_deletes_a_blog()
+    public function it_deletes_a_blog()
     {
         $this->authenticateAsAdmin();
 
@@ -150,5 +150,5 @@ class BlogControllerTest extends TestCase
 
         $response = $this->delete('/blogs/'.$blog->id);
         $response->assertRedirect('/blogs');
-    }*/
+    }
 }
