@@ -5,8 +5,8 @@ namespace DavideCasiraghi\LaravelSmartBlog\Http\Controllers;
 use Validator;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use DavideCasiraghi\LaravelSmartBlog\Models\Blog;
 use DavideCasiraghi\LaravelSmartBlog\Models\Category;
-use DavideCasiraghi\LaravelSmartBlog\Models\Post;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class BlogController extends Controller
@@ -81,7 +81,7 @@ class BlogController extends Controller
      */
     public function show(Blog $category)
     {
-        return view('laravel-smart-blog::blog.show', compact('blog'));
+        return view('laravel-smart-blog::blogs.show', compact('blog'));
     }
 
     /**
@@ -92,7 +92,10 @@ class BlogController extends Controller
      */
     public function edit(Blog $blog)
     {
-        return view('laravel-smart-blog::blog.edit', compact('blog'));
+        $categories = Category::get();
+        
+        return view('laravel-smart-blog::blogs.edit', compact('blog'))
+                    ->with('categories', $categories);
     }
 
     /**

@@ -86,7 +86,7 @@ class BlogControllerTest extends TestCase
     public function it_displays_the_blog_edit_page()
     {
         $this->authenticateAsAdmin();
-
+        
         $blog = factory(Blog::class)->create();
         $response = $this->get("/blogs/{$blog->id}/edit");
         $response->assertViewIs('laravel-smart-blog::blogs.edit')
