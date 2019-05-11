@@ -5,15 +5,15 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show Category</h2>
+                <h2>Show Blog</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('categories.index') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('blogs.index') }}"> Back</a>
             </div>
         </div>
     </div>
 
-
+{{--
     <div class="row">
         <div class="col-12">
             <div class="form-group">
@@ -34,4 +34,5 @@
             </div>
         </div>
     </div>
+    --}}
 @endsection

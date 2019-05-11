@@ -77,10 +77,10 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \DavideCasiraghi\LaravelSmartBlog\Models\Blog  $category
+     * @param  \DavideCasiraghi\LaravelSmartBlog\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
-    public function show(Blog $category)
+    public function show(Blog $blog)
     {
         return view('laravel-smart-blog::blogs.show', compact('blog'));
     }

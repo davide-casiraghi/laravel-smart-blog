@@ -88,15 +88,15 @@ class BlogControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_displays_the_category_show_page()
+    public function it_displays_the_blog_show_page()
     {
         $this->authenticateAsAdmin();
 
-        $category = factory(Category::class)->create();
-        $response = $this->get('/categories/'.$category->id);
-        $response->assertViewIs('laravel-smart-blog::categories.show')
+        $blog = factory(Blog::class)->create();
+        $response = $this->get('/blogs/'.$blog->id);
+        $response->assertViewIs('laravel-smart-blog::blogs.show')
                  ->assertStatus(200);
-    }*/
+    }
 
     /** @test */
     public function it_displays_the_blog_edit_page()
@@ -146,14 +146,14 @@ class BlogControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_does_not_update_invalid_category()
+    public function it_does_not_update_invalid_blog()
     {
         $this->authenticateAsAdmin();
 
-        $category = factory(Category::class)->create();
-        $response = $this->put('/categories/'.$category->id, []);
+        $blog = factory(Blog::class)->create();
+        $response = $this->put('/blogs/'.$blog->id, []);
         $response->assertSessionHasErrors();
-    }*/
+    }
 
     /** @test */
     public function it_deletes_a_blog()
