@@ -29,7 +29,7 @@ class BlogController extends Controller
 
         // Countries available for translations
         $countriesAvailableForTranslations = LaravelLocalization::getSupportedLocales();
-
+    
         return view('laravel-smart-blog::blogs.index', compact('blogs'))
             ->with('i', (request()->input('page', 1) - 1) * 10)
             ->with('categories', $categories)

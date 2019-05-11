@@ -27,13 +27,13 @@ class BlogControllerTest extends TestCase
     }*/
 
     /** @test */
-    /*public function it_displays_the_event_categories_index_page()
+    public function it_displays_the_event_blogs_index_page()
     {
         $this->authenticateAsAdmin();
-        $this->get('categories')
-            ->assertViewIs('laravel-smart-blog::categories.index')
+        $this->get('blogs')
+            ->assertViewIs('laravel-smart-blog::blogs.index')
             ->assertStatus(200);
-    }*/
+    }
 
     /** @test */
     public function it_displays_the_blog_create_page()
@@ -45,22 +45,41 @@ class BlogControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_stores_a_valid_category()
+    public function it_stores_a_valid_blog()
     {
         $this->authenticateAsAdmin();
-
+        $user = User::first();
+        
         $data = [
-            'name' => 'test title',
-            'slug' => 'test body',
+            'category_id' => '1',
+            'layout' => '1',
+            'columns' => '3',
+            'article_order' => '1',
+            'pagination' => '1',
+            'featured_articles' => '1',
+            'show_category_title' => '1',
+            'show_category_subtitle' => '1',
+            'show_category_description' => '1',
+            'show_category_image' => '1',
+            'show_post_title' => '1',
+            'post_linked_titles' => '1',
+            'show_post_intro_text' => '1',
+            'show_post_author' => '1',
+            'link_post_author' => '1',
+            'show_create_date' => '1',
+            'show_modify_date' => '1',
+            'show_publish_date' => '1',
+            'show_read_more' => '1',
+            'created_by' => $user->id,  
         ];
 
         $response = $this
             ->followingRedirects()
-            ->post('/categories', $data);
+            ->post('/blogs', $data);
 
-        $this->assertDatabaseHas('category_translations', ['locale' => 'en']);
-        $response->assertViewIs('laravel-smart-blog::categories.index');
-    }*/
+        $this->assertDatabaseHas('blogs', ['category_id' => '1']);
+        $response->assertViewIs('laravel-smart-blog::blogs.index');
+    }
 
     /** @test */
     /*public function it_does_not_store_invalid_category()
@@ -121,13 +140,13 @@ class BlogControllerTest extends TestCase
     }*/
 
     /** @test */
-    /*public function it_deletes_event_categories()
+    /*public function it_deletes_a_blog()
     {
         $this->authenticateAsAdmin();
 
-        $category = factory(Category::class)->create();
+        $blog = factory(Blog::class)->create();
 
-        $response = $this->delete('/categories/'.$category->id);
-        $response->assertRedirect('/categories');
+        $response = $this->delete('/blogs/'.$blog->id);
+        $response->assertRedirect('/blogs');
     }*/
 }

@@ -5,10 +5,10 @@
     <div class="container max-w-md px-0">
         <div class="row">
             <div class="col-12 col-sm-7">
-                <h4>@lang('views.category_management')</h4>
+                <h4>@lang('views.blog_management')</h4>
             </div>    
             <div class="col-12 col-sm-5 mt-sm-0 text-right">
-                <a class="btn btn-success create-new" href="{{ route('categories.create') }}"><i class="fa fas fa-plus-circle"></i> @lang('views.create_new_category')</a>
+                <a class="btn btn-success create-new" href="{{ route('blogs.create') }}"><i class="fa fas fa-plus-circle"></i> @lang('views.create_new_category')</a>
             </div>
         </div>
 
@@ -18,25 +18,16 @@
             </div>
         @endif
 
-        {{-- List of post categories --}}
-        <div class="venuesList my-4">
-            @foreach ($categories as $category)
+        {{-- List of blogs --}}
+        <div class="blogsList my-4">
+            @foreach ($blogs as $blog)
                 <div class="row bg-white shadow-1 rounded mb-3 pb-2 pt-3 mx-1">
                     {{-- Title --}}
                         <div class="col-12 py-1 title">
                             <h5 class="darkest-gray">{{ $category->translate('en')->name }}</h5>
                         </div>
                         
-                    {{-- Translations --}}
-                        <div class="col-12 mb-4 mt-4">
-                            @foreach ($countriesAvailableForTranslations as $key => $countryAvTrans)
-                                @if($blog->hasTranslation($key))
-                                    <a href="/categoryTranslations/{{ $blog->id }}/{{ $key }}/edit" class="bg-success text-white px-2 py-1 mb-1 mb-lg-0 d-inline-block rounded">{{$key}}</a>
-                                @else
-                                    <a href="/categoryTranslations/{{ $blog->id }}/{{ $key }}/create" class="bg-secondary text-white px-2 py-1 mb-1 mb-lg-0 d-inline-block rounded">{{$key}}</a>
-                                @endif
-                            @endforeach
-                        </div>
+                    
                         
                     {{-- Buttons --}}
                         <div class="col-12 pb-2 action">
