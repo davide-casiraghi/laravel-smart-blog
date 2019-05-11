@@ -87,7 +87,7 @@ class BlogController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Blog  $blog
+     * @param  \DavideCasiraghi\LaravelSmartBlog\Models\Blog  $blog
      * @return \Illuminate\Http\Response
      */
     public function edit(Blog $blog)
