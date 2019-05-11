@@ -13,18 +13,13 @@ class BlogControllerTest extends TestCase
     /***************************************************************/
 
     /** @test */
-    /*public function it_runs_the_test_factory()
+    public function it_runs_the_test_factory()
     {
-        $category = factory(Blog::class)->create([
-                            'name' => 'Regular Jams',
-                            'slug' => 'regular-jams',
-                        ]);
-        $this->assertDatabaseHas('category_translations', [
-                                'locale' => 'en',
-                                'name' => 'Regular Jams',
-                                'slug' => 'regular-jams',
+        $blog = factory(Blog::class)->create();
+        $this->assertDatabaseHas('blogs', [
+                                'id' => '1',
                 ]);
-    }*/
+    }
 
     /** @test */
     public function it_displays_the_event_blogs_index_page()
