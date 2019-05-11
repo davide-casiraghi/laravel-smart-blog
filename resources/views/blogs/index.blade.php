@@ -37,6 +37,7 @@
                             <form action="{{ route('blogs.destroy',$blog->id) }}" method="POST">
 
                                 <a class="btn btn-primary float-right" href="{{ route('blogs.edit',$blog->id) }}">@lang('views.edit')</a>
+                                <a class="btn btn-outline-primary mr-2 float-right" href="{{ route('blogs.show',$blog->id) }}">@lang('views.view')</a>
                                 
                                 @csrf
                                 @method('DELETE')
