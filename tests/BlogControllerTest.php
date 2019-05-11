@@ -110,21 +110,40 @@ class BlogControllerTest extends TestCase
     }
 
     /** @test */
-    /*public function it_updates_valid_category()
+    public function it_updates_blog_category()
     {
         $this->authenticateAsAdmin();
-        $category = factory(Category::class)->create();
+        $blog = factory(Blog::class)->create();
+        $user = User::first();
 
         $attributes = ([
-            'name' => 'test name updated',
-            'slug' => 'test slug updated',
+            'category_id' => '1',
+            'layout' => '1',
+            'columns' => '3',
+            'article_order' => '1',
+            'pagination' => '1',
+            'featured_articles' => '0',
+            'show_category_title' => '1',
+            'show_category_subtitle' => '1',
+            'show_category_description' => '0',
+            'show_category_image' => '1',
+            'show_post_title' => '1',
+            'post_linked_titles' => '1',
+            'show_post_intro_text' => '0',
+            'show_post_author' => '1',
+            'link_post_author' => '1',
+            'show_create_date' => '1',
+            'show_modify_date' => '0',
+            'show_publish_date' => '1',
+            'show_read_more' => '1',
+            'created_by' => $user->id,  
           ]);
 
         $response = $this->followingRedirects()
-                         ->put('/categories/'.$category->id, $attributes);
-        $response->assertViewIs('laravel-smart-blog::categories.index')
+                         ->put('/blogs/'.$blog->id, $attributes);
+        $response->assertViewIs('laravel-smart-blog::blogs.index')
                  ->assertStatus(200);
-    }*/
+    }
 
     /** @test */
     /*public function it_does_not_update_invalid_category()
