@@ -83,15 +83,15 @@ class BlogControllerTest extends TestCase
     }*/
 
     /** @test */
-    /*public function it_displays_the_category_edit_page()
+    public function it_displays_the_blog_edit_page()
     {
         $this->authenticateAsAdmin();
 
-        $category = factory(Category::class)->create();
-        $response = $this->get("/categories/{$category->id}/edit");
-        $response->assertViewIs('laravel-smart-blog::categories.edit')
+        $blog = factory(Blog::class)->create();
+        $response = $this->get("/blogs/{$blog->id}/edit");
+        $response->assertViewIs('laravel-smart-blog::blogs.edit')
                  ->assertStatus(200);
-    }*/
+    }
 
     /** @test */
     /*public function it_updates_valid_category()

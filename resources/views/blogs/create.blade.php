@@ -5,11 +5,8 @@
     <div class="container max-w-md px-0">
     
         <div class="row mb-4">
-            <div class="col-12 col-sm-10">
-                <h3>@lang('views.add_new_category')</h3>
-            </div>
-            <div class="col-12 col-sm-2 text-right">
-                <span class="badge badge-secondary">English</span>
+            <div class="col-12">
+                <h3>@lang('views.add_new_blog')</h3>
             </div>
         </div>
 
@@ -17,7 +14,7 @@
               'style' => 'alert-danger',
         ])
 
-        <form action="{{ route('categories.store') }}" method="POST">
+        <form action="{{ route('blogs.store') }}" method="POST">
             @csrf
 
             {{-- category_id --}}
