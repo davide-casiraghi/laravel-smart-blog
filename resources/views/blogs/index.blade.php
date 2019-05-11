@@ -8,7 +8,7 @@
                 <h4>@lang('views.blog_management')</h4>
             </div>    
             <div class="col-12 col-sm-5 mt-sm-0 text-right">
-                <a class="btn btn-success create-new" href="{{ route('blogs.create') }}"><i class="fa fas fa-plus-circle"></i> @lang('views.create_new_category')</a>
+                <a class="btn btn-success create-new" href="{{ route('blogs.create') }}"><i class="fa fas fa-plus-circle"></i> @lang('views.create_new_blog')</a>
             </div>
         </div>
 
