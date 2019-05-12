@@ -19,6 +19,7 @@
                   'blog' => $blog,
                   'category' => $category,
                   'posts' => $posts,
+                  'columnsBootstrapClass' => $columnsBootstrapClass,
             ])
         @break
 

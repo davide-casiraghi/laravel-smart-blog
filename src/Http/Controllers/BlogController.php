@@ -43,7 +43,8 @@ class BlogController extends Controller
      */
     public function create()
     {
-        $categories = Category::get();
+        //$categories = Category::get();
+        $categories = Category::listsTranslations('name')->pluck('name', 'id');
 
         return view('laravel-smart-blog::blogs.create')
             ->with('categories', $categories);
@@ -85,9 +86,17 @@ class BlogController extends Controller
         $category = Category::where('id', $blog->category_id)->get();
         $posts = Post::where('category_id', $blog->category_id)->get();
 
+        //$columnsBootstrapClass = "col-sm-".strval((12/intval($blog->columns)));
+
+        $columnsBootstrapClass = (!empty($blog->columns)) ? "col-sm-".strval((12/intval($blog->columns))) : "";
+
+
+        
+
         return view('laravel-smart-blog::blogs.show', compact('blog'))
                     ->with('category', $category)
-                    ->with('posts', $posts);
+                    ->with('posts', $posts)
+                    ->with('columnsBootstrapClass', $columnsBootstrapClass);
     }
 
     /**
