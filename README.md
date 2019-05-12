@@ -72,10 +72,12 @@ npm run dev
 ```
 
 ## Usage
+After the package is published it adds three new routes:
+- /blogs
+- /categories
+- /posts
 
-``` php
-// Usage description here
-```
+Accessing to this routes you can create new blogs, categories and posts and access to them.
 
 ### Testing
 
