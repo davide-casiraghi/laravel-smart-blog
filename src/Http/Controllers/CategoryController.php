@@ -133,9 +133,9 @@ class CategoryController extends Controller
      */
     public function saveOnDb($request, $category)
     {
-        $category->name = $request->get('name');
-        $category->description = $request->get('description');
-        $category->slug = Str::slug($category->name, '-');
+        $category->translateOrNew('en')->name = $request->get('name');
+        $category->translateOrNew('en')->description = $request->get('description');
+        $category->translateOrNew('en')->slug = Str::slug($category->name, '-');
 
         $category->save();
     }
