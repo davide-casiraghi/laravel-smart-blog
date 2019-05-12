@@ -6,7 +6,7 @@
     
         <div class="row mb-4">
             <div class="col-12 col-sm-8">
-                <h3>@lang('views.add_new_post')</h3>
+                <h3>@lang('laravel-smart-blog::post.create_post')</h3>
             </div>
             <div class="col-12 col-sm-4 text-right">
                 <span class="badge badge-secondary">English</span>
@@ -23,7 +23,7 @@
              <div class="row">
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.input', [
-                        'title' => __('views.title'),
+                        'title' => __('laravel-smart-blog::post.title'),
                         'name' => 'title',
                         'placeholder' => 'Post title',
                         'value' => old('title'),
@@ -33,7 +33,7 @@
                 
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.select', [
-                        'title' => __('views.category'),
+                        'title' => __('laravel-smart-blog::post.category'),
                         'name' => 'category_id',
                         'placeholder' => __('views.select_category'),
                         'records' => $categories,
@@ -44,7 +44,7 @@
                 </div>
                 <div class="col-12">
                     <div class="form-group">
-                        <strong>Status</strong>
+                        <strong>@lang('laravel-smart-blog::post.status')</strong>
                         <select name="status" class="form-control">
                             <option value="2" selected>Published</option>
                             <option value="1">Unpublished</option>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.textarea-plain', [
-                        'title' =>  __('views.before_post_contents'),
+                        'title' =>  __('laravel-smart-blog::post.before_post_contents'),
                         'name' => 'before_content',
                         'value' => old('before_content'),
                         'required' => false,
@@ -62,7 +62,7 @@
                 </div>
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.textarea-post', [
-                        'title' => 'Text',
+                        'title' => __('laravel-smart-blog::post.text'),
                         'name' => 'body',
                         'placeholder' => 'Post text',
                         'value' => old('body'),
@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.textarea-plain', [
-                        'title' =>  __('views.after_post_contents'),
+                        'title' =>  __('laravel-smart-blog::post.after_post_contents'),
                         'name' => 'after_content',
                         'value' => old('after_content'),
                         'required' => false,
@@ -79,7 +79,7 @@
                 </div>
                 
                 @include('laravel-smart-blog::partials.upload-image', [
-                      'title' => __('views.upload_profile_picture'), 
+                      'title' => __('laravel-smart-blog::post.upload_post_image'), 
                       'name' => 'introimage',
                       'folder' => 'posts_intro_images',
                       'value' => ''

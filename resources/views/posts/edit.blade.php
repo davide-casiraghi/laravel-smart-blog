@@ -23,7 +23,7 @@
              <div class="row">
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.input', [
-                        'title' => __('views.title'),
+                        'title' => __('laravel-smart-blog::post.title'),
                         'name' => 'title',
                         'placeholder' => 'Event title',
                         'value' => $post->translate('en')->title,
@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-10">
                     @include('laravel-smart-blog::partials.input-readonly', [
-                        'title' => 'Link to this post',
+                        'title' => __('laravel-smart-blog::post.link_to_this_post'), 
                         'name' => 'post_link',
                         'tooltip' => '',
                         'value' => env('APP_URL').'post/'.$post->translate('en')->slug
@@ -53,7 +53,7 @@
             <div class="row">
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.select', [
-                        'title' => __('views.category'),
+                        'title' => __('laravel-smart-blog::post.category'),
                         'name' => 'category_id',
                         'placeholder' => __('views.select_category'),
                         'records' => $categories,
@@ -65,7 +65,7 @@
                 </div>
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.textarea-plain', [
-                        'title' =>  __('views.before_post_contents'),
+                        'title' =>  __('laravel-smart-blog::post.before_post_contents'),
                         'name' => 'before_content',
                         'value' => $post->translate('en')->before_content,
                         'required' => false,
@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.textarea-post', [
-                        'title' => 'Text',
+                        'title' => 'laravel-smart-blog::post.text',
                         'name' => 'body',
                         'placeholder' => 'Post text',
                         'value' => $post->translate('en')->body,
@@ -82,15 +82,15 @@
                 </div>
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.textarea-plain', [
-                        'title' =>  __('views.after_post_contents'),
-                        'name' => 'after_content',
+                        'title' =>  __('laravel-smart-blog::post.after_post_contents'),
+                        'name' => 'laravel-smart-blog::post.after_content',
                         'value' => $post->translate('en')->after_content,
                         'required' => false,
                     ])
                 </div>
                 
                 @include('laravel-smart-blog::partials.upload-image', [
-                    'title' => __('views.upload_profile_picture'), 
+                    'title' => __('laravel-smart-blog::post.upload_post_image'), 
                     'name' => 'introimage',
                     'folder' => 'posts_intro_images',
                     'value' => $post->introimage,

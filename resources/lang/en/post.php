@@ -7,4 +7,12 @@ return [
     'post' => 'Post',
     'search_by_post_name' => 'Search by post name',
     'filter_by_category' => 'Filter by category',
+    'title' => 'Title',
+    'category' => 'Category',
+    'link_to_this_post' => 'Link to this post',
+    'before_post_contents' => 'Before post contents',
+    'text' => 'Text',
+    'after_post_contents' => 'After post contents',
+    'upload_post_image' => 'Upload post image',
+    'status' => 'Status',
 ];
