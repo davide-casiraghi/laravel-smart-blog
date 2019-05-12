@@ -39,6 +39,38 @@ This command will publish in your application this folders:
 In this way it's possible for you to customize them.
 
 
+#### Run the migration
+
+```php artisan migrate ```   
+
+To create the gallery_images table in your database.
+
+#### Load the JS file
+
+In the **resources/js/app.js** file of your application require the **Bricklayer** and **bricklayerBlogLayout.js** files before the Vue object get instanciated:
+
+```
+require('./bootstrap');
+window.Vue = require('vue');
+
+window.Bricklayer = require('bricklayer');
+require('./vendor/laravel-smart-blog/bricklayerBlogLayout');
+
+window.myApp = new Vue({  
+    el: '#app'
+});
+```
+
+In the **resources/sass/app.scss** file of your application import the scss
+```
+@import 'vendor/laravel-smart-blog/bricklayerBlogLayout';
+```
+
+Then you can run Laravel Mix
+```
+npm run dev
+```
+
 ## Usage
 
 ``` php
