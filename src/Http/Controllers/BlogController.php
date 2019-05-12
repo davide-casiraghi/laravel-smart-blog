@@ -88,10 +88,7 @@ class BlogController extends Controller
 
         //$columnsBootstrapClass = "col-sm-".strval((12/intval($blog->columns)));
 
-        $columnsBootstrapClass = (!empty($blog->columns)) ? "col-sm-".strval((12/intval($blog->columns))) : "";
-
-
-        
+        $columnsBootstrapClass = (! empty($blog->columns)) ? 'col-sm-'.strval((12 / intval($blog->columns))) : '';
 
         return view('laravel-smart-blog::blogs.show', compact('blog'))
                     ->with('category', $category)
