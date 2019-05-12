@@ -15,8 +15,7 @@ class LaravelSmartBlogServiceProvider extends ServiceProvider
         /*
          * Optional methods to load your package assets
          */
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-smart-blog');
-
+        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-smart-blog');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-smart-blog');
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 

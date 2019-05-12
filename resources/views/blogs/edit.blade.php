@@ -21,7 +21,7 @@
              <div class="row">
                  <div class="col-12">
                     @include('laravel-smart-blog::partials.select', [
-                          'title' => __('vendor.laravel-smart-blog.category'),
+                          'title' => __('laravel-smart-blog::blog.category'),
                           'name' => 'category_id',
                           'placeholder' => __('general.select_category'),
                           'records' => $categories,
@@ -35,7 +35,7 @@
                 {{-- layout --}}
                     <div class="col-12">
                        @include('laravel-smart-blog::partials.select', [
-                             'title' => __('general.layout'),
+                             'title' => __('laravel-smart-blog::blog.layout'),
                              'name' => 'layout',
                              'placeholder' => __('general.select_layout'),
                              'records' => [
@@ -52,7 +52,7 @@
                 {{-- columns --}}
                 <div class="col-12">
                    @include('laravel-smart-blog::partials.select', [
-                         'title' => __('general.columns'),
+                         'title' => __('laravel-smart-blog::blog.columns'),
                          'name' => 'columns',
                          'placeholder' => __('general.select_layout'),
                          'records' => [
@@ -71,7 +71,7 @@
                 {{-- article_order --}}
                 <div class="col-12">
                    @include('laravel-smart-blog::partials.select', [
-                         'title' => __('general.article_order'),
+                         'title' =>  __('laravel-smart-blog::blog.article_order'),
                          'name' => 'article_order',
                          'placeholder' => __('general.select_layout'),
                          'records' => [
@@ -93,7 +93,7 @@
                 {{-- pagination --}}
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.input', [
-                          'title' => __('general.items_per_page'),
+                          'title' => __('laravel-smart-blog::blog.items_per_page'),
                           'name' => 'items_per_page',
                           'placeholder' => 'Items per page',
                           'value' => $blog->items_per_page,
@@ -104,7 +104,7 @@
                 {{-- featured_articles --}}
                 <div class="col-12">
                    @include('laravel-smart-blog::partials.select', [
-                         'title' => __('general.featured_articles'),
+                         'title' => __('laravel-smart-blog::blog.featured_articles'),
                          'name' => 'featured_articles',
                          'placeholder' => __('general.select_layout'),
                          'records' => [
@@ -123,7 +123,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
                           'name' => 'show_category_title',
-                          'description' => __('views.blogs.show_category_title'),
+                          'description' => __('laravel-smart-blog::blog.show_category_title'),
                           'value' => $blog->show_category_title,
                           'required' => false,
                     ])
@@ -132,7 +132,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
                           'name' => 'show_category_subtitle',
-                          'description' => __('views.blogs.show_category_subtitle'),
+                          'description' => __('laravel-smart-blog::blog.show_category_subtitle'),
                           'value' => $blog->show_category_subtitle,
                           'required' => false,
                     ])
@@ -141,7 +141,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
                           'name' => 'show_category_description',
-                          'description' => __('views.blogs.show_category_description'),
+                          'description' => __('laravel-smart-blog::blog.show_category_description'),
                           'value' => $blog->show_category_description,
                           'required' => false,
                     ])
@@ -150,7 +150,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
                           'name' => 'show_category_image',
-                          'description' => __('views.blogs.show_category_image'),
+                          'description' => __('laravel-smart-blog::blog.show_category_image'),
                           'value' => $blog->show_category_image,
                           'required' => false,
                     ])
@@ -159,7 +159,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
                           'name' => 'show_post_title',
-                          'description' => __('views.blogs.show_post_title'),
+                          'description' => __('laravel-smart-blog::blog.show_post_title'),
                           'value' => $blog->show_post_title,
                           'required' => false,
                     ])
@@ -168,7 +168,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
                           'name' => 'post_linked_titles',
-                          'description' => __('views.blogs.post_linked_titles'),
+                          'description' => __('laravel-smart-blog::blog.post_linked_titles'),
                           'value' => $blog->post_linked_titles,
                           'required' => false,
                     ])
@@ -177,7 +177,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
                           'name' => 'show_post_intro_text',
-                          'description' => __('views.blogs.show_post_intro_text'),
+                          'description' => __('laravel-smart-blog::blog.show_post_intro_text'),
                           'value' => $blog->show_post_intro_text,
                           'required' => false,
                     ])
@@ -186,7 +186,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
                           'name' => 'show_post_author',
-                          'description' => __('views.blogs.show_post_author'),
+                          'description' => __('laravel-smart-blog::blog.show_post_author'),
                           'value' => $blog->show_post_author,
                           'required' => false,
                     ])
@@ -196,7 +196,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
                           'name' => 'link_post_author',
-                          'description' => __('views.blogs.link_post_author'),
+                          'description' => __('laravel-smart-blog::blog.link_post_author'),
                           'value' =>  $blog->link_post_author,
                           'required' => false,
                     ])
@@ -206,7 +206,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
                           'name' => 'show_create_date',
-                          'description' => __('views.blogs.show_create_date'),
+                          'description' => __('laravel-smart-blog::blog.show_create_date'),
                           'value' => $blog->show_create_date,
                           'required' => false,
                     ])
@@ -216,7 +216,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
                           'name' => 'show_modify_date',
-                          'description' => __('views.blogs.show_modify_date'),
+                          'description' => __('laravel-smart-blog::blog.show_modify_date'),
                           'value' => $blog->show_modify_date,
                           'required' => false,
                     ])
@@ -226,7 +226,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
                           'name' => 'show_publish_date',
-                          'description' => __('views.blogs.show_publish_date'),
+                          'description' => __('laravel-smart-blog::blog.show_publish_date'),
                           'value' => $blog->show_publish_date,
                           'required' => false,
                     ])
@@ -236,7 +236,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
                           'name' => 'show_read_more',
-                          'description' => __('views.blogs.show_read_more'),
+                          'description' => __('laravel-smart-blog::blog.show_read_more'),
                           'value' => $blog->show_read_more,
                           'required' => false,
                     ])
