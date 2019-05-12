@@ -16,10 +16,10 @@
     <div class="container max-w-md px-0">
         <div class="row">
             <div class="col-12 col-sm-7">
-                <h3>@lang('views.post_management')</h3>
+                <h3>@lang('laravel-smart-blog::post.post_management')</h3>
             </div>
             <div class="col-12 col-sm-5 mt-sm-0 text-right">
-                <a class="btn btn-success create-new" href="{{ route('posts.create') }}"><i class="fa fas fa-plus-circle"></i> @lang('views.create_new_post')</a>
+                <a class="btn btn-success create-new" href="{{ route('posts.create') }}"><i class="fa fas fa-plus-circle"></i> @lang('laravel-smart-blog::post.create_post')</a>
             </div>
         </div>
 
@@ -36,14 +36,14 @@
                 <div class="col-12 col-sm-6 pr-sm-2"> 
                     @include('laravel-smart-blog::partials.input', [
                         'name' => 'keywords',
-                        'placeholder' => __('views.search_by_post_name'),
+                        'placeholder' => __('laravel-smart-blog::post.search_by_post_name'),
                         'value' => $searchKeywords
                     ])
                 </div>
                 <div class="col-12 col-sm-6">
                     @include('laravel-smart-blog::partials.select', [
                         'name' => 'category_id',
-                        'placeholder' => __('views.filter_by_category'),
+                        'placeholder' => __('laravel-smart-blog::post.filter_by_category'),
                         'records' => $categories,
                         'selected' => $searchCategory,
                         'liveSearch' => 'false',
@@ -51,8 +51,8 @@
                     ])
                 </div>
                 <div class="col-12">
-                    <input type="submit" value="@lang('general.search')" class="btn btn-primary float-right ml-2">
-                    <a id="resetButton" class="btn btn-outline-primary float-right" href="#">@lang('general.reset')</a>
+                    <input type="submit" value="@lang('laravel-smart-blog::general.search')" class="btn btn-primary float-right ml-2">
+                    <a id="resetButton" class="btn btn-outline-primary float-right" href="#">@lang('laravel-smart-blog::general.reset')</a>
                 </div>
             </div>
         </form>
@@ -98,13 +98,13 @@
                             <div class="col-12 pb-2 action">
                                 <form action="{{ route('posts.destroy',$post->id) }}" method="POST">
 
-                                    <a class="btn btn-primary float-right" href="{{ route('posts.edit',$post->id) }}">@lang('views.edit')</a>
-                                    <a class="btn btn-outline-primary mr-2 float-right" href="{{ route('posts.show',$post->id) }}">@lang('views.view')</a>
+                                    <a class="btn btn-primary float-right" href="{{ route('posts.edit',$post->id) }}">@lang('laravel-smart-blog::general.edit')</a>
+                                    <a class="btn btn-outline-primary mr-2 float-right" href="{{ route('posts.show',$post->id) }}">@lang('laravel-smart-blog::general.view')</a>
                                     
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit" class="btn btn-link pl-0">@lang('views.delete')</button>
+                                    <button type="submit" class="btn btn-link pl-0">@lang('laravel-smart-blog::general.delete')</button>
                                 </form>
                             </div>
                         </div>

@@ -6,4 +6,9 @@ return [
     'view' => 'View',
     'edit' => 'Edit',
     'delete' => 'Delete',
+    'reset' => 'Reset',
+    'search' => 'Search',
+    'name' => 'Name',
+    'description' => 'Description',
+
 ];

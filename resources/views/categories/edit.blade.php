@@ -6,7 +6,7 @@
     
         <div class="row mb-4">
             <div class="col-12 col-sm-6">
-                <h3>@lang('views.edit_category')</h3>
+                <h3>@lang('laravel-smart-blog::category.edit_category')</h3>
             </div>
             <div class="col-12 col-sm-6 text-right">
                 <span class="badge badge-secondary">English</span>
@@ -24,7 +24,7 @@
              <div class="row">
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.input', [
-                          'title' => __('general.name'),
+                          'title' => __('laravel-smart-blog::general.name'),
                           'name' => 'name',
                           'placeholder' => 'Category name',
                           'value' => $category->translate('en')->name,
@@ -33,7 +33,7 @@
                 </div>
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.textarea', [
-                          'title' => __('general.description'),
+                          'title' => __('laravel-smart-blog::general.description'),
                           'name' => 'description',
                           'placeholder' => 'Description',
                           'value' => $category->translate('en')->description,
