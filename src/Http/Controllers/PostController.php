@@ -307,11 +307,25 @@ class PostController extends Controller
         $post->featured = $request->get('featured');
 
         // Intro image  picture upload
-        if ($request->file('introimage')) {
+        /*if ($request->file('introimage')) {
             $introImagePictureFile = $request->file('introimage');
             $imageName = $introImagePictureFile->hashName();
             //$path = $introImagePictureFile->store('public/images/posts_intro_images');
             $post->introimage = $imageName;
+        }*/
+        
+        // Intro image  picture upload
+        if ($request->file('introimage')) {
+            $imageFile = $request->file('introimage');
+            $imageName = $imageFile->hashName();
+            $imageSubdir = 'introimage';
+            $imageWidth = '968';
+            $thumbWidth = '300';
+
+            $this->uploadImageOnServer($imageFile, $imageName, $imageSubdir, $imageWidth, $thumbWidth);
+            $post->introimage = $imageName;
+        } else {
+            $post->introimage = $request->introimage;
         }
 
         $post->translateOrNew('en')->before_content = $request->get('before_content');
