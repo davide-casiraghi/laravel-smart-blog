@@ -70,7 +70,7 @@ class PostController extends Controller
                 })
                 ->paginate(20);
         } else {
-            $posts = Post::listsTranslations('title')->select('posts.id', 'title', 'category_id', 'status', 'featured', 'introimage', 'introimage_alt',)->orderBy('title')->paginate(20);
+            $posts = Post::listsTranslations('title')->select('posts.id', 'title', 'category_id', 'status', 'featured', 'introimage', 'introimage_alt')->orderBy('title')->paginate(20);
         }
 
         //dd(DB::getQueryLog());
