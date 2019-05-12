@@ -119,6 +119,16 @@
                    ])
                </div>
                
+               
+               <div class="col-12">
+                   <hr>
+               </div>
+              
+               <div class="col-12 mt-2 mb-3">
+                   <h4>@lang('laravel-smart-blog::blog.category')</h4>
+               </div>
+               
+    
                 {{-- show_category_title --}}
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
@@ -155,6 +165,15 @@
                           'required' => false,
                     ])
                 </div>
+                
+                <div class="col-12">
+                    <hr>
+                </div>
+               
+                <div class="col-12 mt-2 mb-3">
+                    <h4>@lang('laravel-smart-blog::blog.post')</h4>
+                </div>
+                
                 {{-- show_post_title --}}
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.checkbox', [
