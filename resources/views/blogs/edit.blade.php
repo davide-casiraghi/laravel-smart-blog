@@ -21,7 +21,7 @@
              <div class="row">
                  <div class="col-12">
                     @include('laravel-smart-blog::partials.select', [
-                          'title' => __('general.category'),
+                          'title' => __('vendor.laravel-smart-blog.category'),
                           'name' => 'category_id',
                           'placeholder' => __('general.select_category'),
                           'records' => $categories,
