@@ -1,4 +1,4 @@
-# Laravel Smart blog
+# Laravel Smart Blog
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/davide-casiraghi/laravel-smart-blog.svg?style=flat-square)](https://packagist.org/packages/davide-casiraghi/laravel-smart-blog)
 [![Build Status](https://img.shields.io/travis/davide-casiraghi/laravel-smart-blog/master.svg?style=flat-square)](https://travis-ci.org/davide-casiraghi/laravel-smart-blog)
