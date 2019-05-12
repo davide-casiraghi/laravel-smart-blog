@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'create_blog' => 'Create blog',
+    'edit_blog' => 'Edit blog',
     'category' => 'Category',
     'layout' => 'Layout',
     'columns' => 'Columns number',

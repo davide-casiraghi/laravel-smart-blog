@@ -5,7 +5,7 @@
         
         <div class="row mb-4">
             <div class="col-12">
-                <h3>@lang('views.edit_blog')</h3>
+                <h3>@lang('laravel-smart-blog::blog.edit_blog')</h3>
             </div>
         </div>
 
@@ -241,7 +241,7 @@
                           'required' => false,
                     ])
                 </div>
-                
+                 
             </div>
 
             @include('laravel-smart-blog::partials.buttons-back-submit', [
