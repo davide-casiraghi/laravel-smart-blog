@@ -16,7 +16,7 @@ class CreateBlogsTable extends Migration
             $table->integer('columns');
             
             $table->integer('article_order');
-            $table->integer('pagination');
+            $table->integer('items_per_page');
             $table->integer('featured_articles');
 
             $table->boolean('show_category_title')->nullable();

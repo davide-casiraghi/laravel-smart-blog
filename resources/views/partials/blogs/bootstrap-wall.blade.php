@@ -9,7 +9,7 @@
             @if(!empty($post->image))
                 <img class="ml-sm-3 float-sm-right img-fluid" alt="{{ $post->title }}" src="/storage/images/events_teaser/thumb_{{ $post->image }}">
             @else
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-warning" role="alert">
                     Image not found
                 </div>
             @endif

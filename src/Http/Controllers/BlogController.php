@@ -159,7 +159,7 @@ class BlogController extends Controller
         $blog->columns = $request->get('columns');
         $blog->article_order = $request->get('article_order');
 
-        $blog->pagination = $request->get('pagination');
+        $blog->items_per_page = $request->get('items_per_page');
         $blog->featured_articles = $request->get('featured_articles');
         $blog->show_category_title = $request->get('show_category_title');
         $blog->show_category_subtitle = $request->get('show_category_subtitle');

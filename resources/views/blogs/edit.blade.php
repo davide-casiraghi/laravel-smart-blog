@@ -94,7 +94,7 @@
                 <div class="col-12">
                     @include('laravel-smart-blog::partials.input', [
                           'title' => __('general.pagination'),
-                          'name' => 'pagination',
+                          'name' => 'items_per_page',
                           'placeholder' => 'Items per page',
                           'value' => $blog->pagination,
                           'required' => true,
