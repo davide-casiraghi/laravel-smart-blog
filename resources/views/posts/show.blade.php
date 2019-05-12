@@ -18,7 +18,6 @@
                 {!! $post->body !!}
             </div>
         </div>
-
     </div>
 
 @endsection

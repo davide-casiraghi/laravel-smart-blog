@@ -241,12 +241,15 @@
                           'required' => false,
                     ])
                 </div>
-                 
             </div>
-
-            @include('laravel-smart-blog::partials.buttons-back-submit', [
-                'route' => 'blogs.index'  
-            ])
+            
+            <div class="row">
+               <div class="col-12 mt-3 mb-4">
+                    @include('laravel-smart-blog::partials.buttons-back-submit', [
+                        'route' => 'blogs.index'  
+                    ])
+                </div>
+            </div>
 
         </form>
     </div>
