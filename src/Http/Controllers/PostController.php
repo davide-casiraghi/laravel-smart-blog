@@ -52,7 +52,7 @@ class PostController extends Controller
 
         if ($searchKeywords || $searchCategory) {
             $posts = Post::
-                select('post_translations.post_id AS id', 'post_translations.title AS title', 'category_id', 'locale')
+                select('post_translations.post_id AS id', 'post_translations.title AS title', 'status', 'featured', 'introimage', 'introimage_alt', 'category_id', 'locale')
                 ->join('post_translations', 'posts.id', '=', 'post_translations.post_id')
 
                 ->when($searchKeywords, function ($query, $searchKeywords) {
@@ -70,11 +70,11 @@ class PostController extends Controller
                 })
                 ->paginate(20);
         } else {
-            $posts = Post::listsTranslations('title')->select('posts.id', 'title', 'category_id')->orderBy('title')->paginate(20);
+            $posts = Post::listsTranslations('title')->select('posts.id', 'title', 'category_id', 'status', 'featured', 'introimage', 'introimage_alt',)->orderBy('title')->paginate(20);
         }
 
         //dd(DB::getQueryLog());
-
+        
         return view('laravel-smart-blog::posts.index', compact('posts'))
             ->with('i', (request()->input('page', 1) - 1) * 20)
             ->with('categories', $categories)
@@ -318,7 +318,7 @@ class PostController extends Controller
         if ($request->file('introimage')) {
             $imageFile = $request->file('introimage');
             $imageName = $imageFile->hashName();
-            $imageSubdir = 'introimage';
+            $imageSubdir = 'posts_intro_images';
             $imageWidth = '968';
             $thumbWidth = '300';
 
