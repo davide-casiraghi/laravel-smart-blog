@@ -74,7 +74,7 @@ class PostController extends Controller
         }
 
         //dd(DB::getQueryLog());
-        
+
         return view('laravel-smart-blog::posts.index', compact('posts'))
             ->with('i', (request()->input('page', 1) - 1) * 20)
             ->with('categories', $categories)
