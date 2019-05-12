@@ -10,5 +10,6 @@ return [
     'search' => 'Search',
     'name' => 'Name',
     'description' => 'Description',
+    'select_one' => 'Select one ...',
 
 ];

@@ -20,7 +20,8 @@ $factory->define(DavideCasiraghi\LaravelSmartBlog\Models\Blog::class, function (
     return [
         'category_id' => '1',
         'layout' => '1',
-        'columns' => '3',
+        'columns_number' => '3',
+        'columns_width' => '200',
         'article_order' => '1',
         'items_per_page' => '20',
         'featured_articles' => '1',

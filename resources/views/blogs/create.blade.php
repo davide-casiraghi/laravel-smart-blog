@@ -52,9 +52,9 @@
                 {{-- columns --}}
                 <div class="col-12">
                    @include('laravel-smart-blog::partials.select', [
-                         'title' => __('laravel-smart-blog::blog.columns'),
-                         'name' => 'columns',
-                         'placeholder' => __('general.select_layout'),
+                         'title' => __('laravel-smart-blog::blog.columns_number'),
+                         'name' => 'columns_number',
+                         'placeholder' => __('laravel-smart-blog::general.select_one'),
                          'records' => [
                              '1' => '1',
                              '2' => '2',
@@ -63,7 +63,17 @@
                          ],
                          'liveSearch' => 'false',
                          'mobileNativeMenu' => true,
-                         'selected' => old('columns'),
+                         'selected' => old('columns_number'),
+                         'required' => true,
+                   ])
+               </div>
+               
+               <div class="col-12">
+                   @include('laravel-smart-blog::partials.input', [
+                         'title' => __('laravel-smart-blog::blog.columns_width'),
+                         'name' => 'columns_width',
+                         'placeholder' => 'number like 200 or 400',
+                         'value' => old('columns_width'),
                          'required' => true,
                    ])
                </div>

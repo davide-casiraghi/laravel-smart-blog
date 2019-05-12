@@ -167,7 +167,8 @@ class BlogController extends Controller
         /* Blog layout */
         $blog->category_id = $request->get('category_id');
         $blog->layout = $request->get('layout');
-        $blog->columns = $request->get('columns');
+        $blog->columns_number = $request->get('columns_number');
+        $blog->columns_width = $request->get('columns_width');
         $blog->article_order = $request->get('article_order');
 
         $blog->items_per_page = $request->get('items_per_page');

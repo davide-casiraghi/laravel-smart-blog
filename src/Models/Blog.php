@@ -19,7 +19,8 @@ class Blog extends Model
     protected $fillable = [
         'category_id',
         'layout',
-        'columns',
+        'columns_number',
+        'columns_width',
         'article_order',
         'items_per_page',
         'featured_articles',

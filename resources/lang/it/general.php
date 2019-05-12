@@ -10,4 +10,5 @@ return [
     'search' => 'Cerca',
     'name' => 'Nome',
     'description' => 'Descrizione',
+    'select_one' => 'Seleziona uno ...',
 ];
