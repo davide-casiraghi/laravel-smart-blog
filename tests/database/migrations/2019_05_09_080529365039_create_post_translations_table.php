@@ -13,6 +13,7 @@ class CreatePostTranslationsTable extends Migration
             $table->integer('post_id')->unsigned();
 
             $table->string('title');
+            $table->text('intro_text')->nullable();
             $table->text('body')->nullable();
 
             $table->string('slug')->nullable();

@@ -83,13 +83,23 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        $category = Category::where('id', $blog->category_id)->get();
+        //$category = Category::where('id', $blog->category_id)->get();
+        
+        $category = Category::select('categories.id AS id', 'category_translations.name AS name', 'category_translations.description AS description', 'category_translations.slug AS slug', 'locale')
+                ->join('category_translations', 'categories.id', '=', 'category_translations.category_id')->first();
+        
         $posts = Post::where('category_id', $blog->category_id)->get();
-
+        
+        /*$posts = Post::select('post.id AS id', 'post_translations.title AS title', 'post_translations.body AS body', 'post_translations.slug AS slug', 'category_id', 'locale')
+                ->join('post_translations', 'posts.id', '=', 'post_translations.post_id');
+        */
+        
         //$columnsBootstrapClass = "col-sm-".strval((12/intval($blog->columns)));
 
         $columnsBootstrapClass = (! empty($blog->columns)) ? 'col-sm-'.strval((12 / intval($blog->columns))) : '';
 
+        //::where('code', 'gr')
+        
         return view('laravel-smart-blog::blogs.show', compact('blog'))
                     ->with('category', $category)
                     ->with('posts', $posts)
@@ -154,6 +164,7 @@ class BlogController extends Controller
      */
     public function saveOnDb($request, $blog)
     {
+        /* Blog layout */
         $blog->category_id = $request->get('category_id');
         $blog->layout = $request->get('layout');
         $blog->columns = $request->get('columns');
@@ -176,6 +187,12 @@ class BlogController extends Controller
         $blog->show_modify_date = $request->get('show_modify_date');
         $blog->show_publish_date = $request->get('show_publish_date');
         $blog->show_read_more = $request->get('show_read_more');
+
+        
+
+
+        /* Post layout */
+
 
         $blog->created_by = \Auth::user()->id;
 

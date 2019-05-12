@@ -22,7 +22,7 @@ $factory->define(DavideCasiraghi\LaravelSmartBlog\Models\Blog::class, function (
         'layout' => '1',
         'columns' => '3',
         'article_order' => '1',
-        'pagination' => '1',
+        'items_per_page' => '20',
         'featured_articles' => '1',
         'show_category_title' => '1',
         'show_category_subtitle' => '1',

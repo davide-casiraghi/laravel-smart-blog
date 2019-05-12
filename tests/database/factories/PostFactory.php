@@ -18,6 +18,7 @@ $factory->define(DavideCasiraghi\LaravelSmartBlog\Models\Post::class, function (
 
     return [
         'title:en' => $post_title,
+        'intro_text:en' => $faker->sentence($nbWords = 10, $variableNbWords = true),
         'slug:en' => $slug,
         'body:en' => $faker->paragraph,
     ];

@@ -13,6 +13,9 @@
                     Image not found
                 </div>
             @endif
+            
+            {!!$post->body!!}
+            
         </div>
     @endforeach
 

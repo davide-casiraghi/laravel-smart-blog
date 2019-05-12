@@ -17,5 +17,5 @@ class PostTranslation extends Model
     /***************************************************************************/
 
     public $timestamps = false;
-    protected $fillable = ['title', 'body', 'slug', 'before_content', 'after_content', 'extra_field_trans_1', 'extra_field_trans_2'];
+    protected $fillable = ['title', 'intro_text', 'body', 'slug', 'before_content', 'after_content', 'extra_field_trans_1', 'extra_field_trans_2'];
 }

@@ -21,7 +21,7 @@ class Blog extends Model
         'layout',
         'columns',
         'article_order',
-        'pagination',
+        'items_per_page',
         'featured_articles',
         'show_category_title',
         'show_category_subtitle',

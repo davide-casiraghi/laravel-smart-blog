@@ -52,6 +52,7 @@ class PostControllerTest extends TestCase
 
         $data = [
             'title' => 'test title',
+            'intro_text'  => 'test intro text',
             'body' => 'test body',
             'category_id' => 1,
             'status'  => 1,
@@ -106,6 +107,7 @@ class PostControllerTest extends TestCase
 
         $attributes = ([
             'title' => 'test title updated',
+            'intro_text' => 'test intro text updated',
             'body' => 'body updated',
             'category_id' => 1,
             'status'  => 1,
