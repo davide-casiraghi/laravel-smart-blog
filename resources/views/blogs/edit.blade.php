@@ -13,8 +13,9 @@
               'style' => 'alert-danger',
         ])
 
-        <form action="{{ route('blogs.store') }}" method="POST">
+        <form action="{{ route('blogs.update',$blog->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
 
             {{-- category_id --}}
              <div class="row">
