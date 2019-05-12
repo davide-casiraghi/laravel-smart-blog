@@ -25,14 +25,13 @@
 
         /* Blog */
         Route::resource('blogs', 'BlogController');
-        
+
         /* Blogs Translations */
         Route::get('/blogTranslations/{blogId}/{languageCode}/create', 'BlogTranslationController@create');
         Route::get('/blogTranslations/{blogId}/{languageCode}/edit', 'BlogTranslationController@edit');
         Route::post('/blogTranslations/store', 'BlogTranslationController@store')->name('blogTranslations.store');
         Route::put('/blogTranslations/update', 'BlogTranslationController@update')->name('blogTranslations.update');
         Route::delete('/blogTranslations/destroy/{blogTranslationId}', 'BlogTranslationController@destroy')->name('blogTranslations.destroy');
-
 
         //Route::get('/blog/{blogKind}/{categoryId}/', 'BlogController@index');
     });
