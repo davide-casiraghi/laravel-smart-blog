@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'create_blog' => 'Crea blog',
+    'blog_management' => 'Blogs management',
+    'create_blog' => 'Crea nuovo blog',
     'edit_blog' => 'Modifica blog',
     'category' => 'Categoria',
     'layout' => 'Layout',
