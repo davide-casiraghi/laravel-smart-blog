@@ -20,16 +20,5 @@ return [
     'show_modify_date' => 'Show modify date',
     'show_publish_date' => 'Show publish date',
     'show_read_more' => 'Show read more',
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
 ];

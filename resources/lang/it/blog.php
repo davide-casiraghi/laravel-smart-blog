@@ -7,7 +7,7 @@ return [
     'article_order' => 'Ordine dei post',
     'items_per_page' => 'Posts per pagina',
     'featured_articles' => 'Post in evidenza',
-    
+
     'show_category_title' => 'Mostra titolo categoria',
     'show_category_subtitle' => 'Mostra sottotitolo categoria',
     'show_category_description' => 'Mostra descrizione categoria',
