@@ -313,7 +313,7 @@ class PostController extends Controller
             //$path = $introImagePictureFile->store('public/images/posts_intro_images');
             $post->introimage = $imageName;
         }*/
-        
+
         // Intro image  picture upload
         if ($request->file('introimage')) {
             $imageFile = $request->file('introimage');
