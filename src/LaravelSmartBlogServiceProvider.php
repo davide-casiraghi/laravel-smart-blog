@@ -36,10 +36,10 @@ class LaravelSmartBlogServiceProvider extends ServiceProvider
                 __DIR__.'/../resources/assets' => public_path('vendor/laravel-smart-blog'),
             ], 'assets');*/
             $this->publishes([
-                __DIR__.'/../resources/assets/sass' => resource_path('sass/vendor/laravel-jumbotron-images/'),
+                __DIR__.'/../resources/assets/sass' => resource_path('sass/vendor/laravel-smart-blog/'),
             ], 'sass');
             $this->publishes([
-                __DIR__.'/../resources/assets/js' => resource_path('js/vendor/laravel-jumbotron-images/'),
+                __DIR__.'/../resources/assets/js' => resource_path('js/vendor/laravel-smart-blog/'),
             ], 'js');
 
             // Publishing the translation files.
