@@ -17,6 +17,27 @@ You can install the package via composer:
 ```bash
 composer require davide-casiraghi/laravel-smart-blog
 ```
+Then install Bricklayer.js trough npm
+```bash
+npm install bricklayer  
+```
+
+
+## Load the CSS and JS files
+
+### With Laravel
+
+#### Publish the JS, CSS and IMAGES
+It's possible to customize the scss and the js publishing them in your Laravel application.  
+
+```php artisan vendor:publish```
+
+This command will publish in your application this folders:
+- /resources/scss/vendor/laravel-smart-blog/
+- /resources/js/vendor/laravel-smart-blog/
+
+In this way it's possible for you to customize them.
+
 
 ## Usage
 
