@@ -94,9 +94,7 @@ class BlogController extends Controller
                 ->join('post_translations', 'posts.id', '=', 'post_translations.post_id');
         */
 
-        //$columnsBootstrapClass = "col-sm-".strval((12/intval($blog->columns)));
-
-        $columnsBootstrapClass = (! empty($blog->columns)) ? 'col-sm-'.strval((12 / intval($blog->columns))) : '';
+        $columnsBootstrapClass = (! empty($blog->columns_number)) ? 'col-sm-'.strval((12 / intval($blog->columns_number))) : '';
 
         //::where('code', 'gr')
 
