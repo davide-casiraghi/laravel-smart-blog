@@ -1,4 +1,4 @@
-<div class="blogBricklayer bricklayer" id='my-bricklayer' data-column-width='200' data-gutter='20'>
+<div class="blogBricklayer bricklayer" id='my-bricklayer' data-column-width='{{$blog->columns_width}}' data-gutter='20'>
     @foreach ($posts as $key => $post)
         <div class='box'>
             <h4>{{ $post->title }}</h4>
