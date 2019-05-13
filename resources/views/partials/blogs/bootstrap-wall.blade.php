@@ -14,7 +14,9 @@
                 </div>
             @endif
             
-            {!!$post->intro_text!!}
+            @if(!empty($blog->show_post_intro_text))
+                {!!$post->intro_text!!}
+            @endif
             
         </div>
     @endforeach

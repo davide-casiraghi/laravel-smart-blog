@@ -171,23 +171,21 @@ class BlogController extends Controller
 
         $blog->items_per_page = $request->get('items_per_page');
         $blog->featured_articles = $request->get('featured_articles');
-        $blog->show_category_title = $request->get('show_category_title');
-        $blog->show_category_subtitle = $request->get('show_category_subtitle');
-        $blog->show_category_description = $request->get('show_category_description');
-        $blog->show_category_image = $request->get('show_category_image');
+        $blog->show_category_title = ($request->show_category_title == 'on') ? 1 : 0;
+        $blog->show_category_subtitle = ($request->show_category_subtitle == 'on') ? 1 : 0;
+        $blog->show_category_description = ($request->show_category_description == 'on') ? 1 : 0;
+        $blog->show_category_image = ($request->show_category_image == 'on') ? 1 : 0;
 
-        $blog->show_post_title = $request->get('show_post_title');
-        $blog->post_linked_titles = $request->get('post_linked_titles');
-        $blog->show_post_intro_text = $request->get('show_post_intro_text');
-        $blog->show_post_author = $request->get('show_post_author');
-        $blog->link_post_author = $request->get('link_post_author');
+        $blog->show_post_title = ($request->show_post_title == 'on') ? 1 : 0;
+        $blog->post_linked_titles = ($request->post_linked_titles == 'on') ? 1 : 0;
+        $blog->show_post_intro_text = ($request->show_post_intro_text == 'on') ? 1 : 0;
+        $blog->show_post_author = ($request->show_post_author == 'on') ? 1 : 0;
+        $blog->link_post_author = ($request->link_post_author == 'on') ? 1 : 0;
 
-        $blog->show_create_date = $request->get('show_create_date');
-        $blog->show_modify_date = $request->get('show_modify_date');
-        $blog->show_publish_date = $request->get('show_publish_date');
-        $blog->show_read_more = $request->get('show_read_more');
-
-        /* Post layout */
+        $blog->show_create_date = ($request->show_create_date == 'on') ? 1 : 0;
+        $blog->show_modify_date = ($request->show_modify_date == 'on') ? 1 : 0;
+        $blog->show_publish_date = ($request->show_publish_date == 'on') ? 1 : 0;
+        $blog->show_read_more = ($request->show_read_more == 'on') ? 1 : 0;
 
         $blog->created_by = \Auth::user()->id;
 
