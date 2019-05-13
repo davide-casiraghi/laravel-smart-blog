@@ -24,7 +24,7 @@ class Post extends Model
 
     /***************************************************************************/
 
-    /**
+    /*
      * Return all the posts by category id in the language specified.
      *
      * @param  int $cat_id
