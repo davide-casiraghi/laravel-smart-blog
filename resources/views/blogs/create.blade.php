@@ -1,6 +1,5 @@
 @extends('laravel-smart-blog::blogs.layout')
 
-
 @section('content')
     <div class="container max-w-md px-0">
     
@@ -17,8 +16,19 @@
         <form action="{{ route('blogs.store') }}" method="POST">
             @csrf
 
-            {{-- category_id --}}
              <div class="row">
+                 {{-- Blog name --}}
+                 <div class="col-12">
+                     @include('laravel-smart-blog::partials.input', [
+                           'title' => __('laravel-smart-blog::blog.name'),
+                           'name' => 'name',
+                           'placeholder' => '',
+                           'value' => old('name'),
+                           'required' => true,
+                     ])
+                 </div>
+                 
+                 {{-- category_id --}}
                  <div class="col-12">
                     @include('laravel-smart-blog::partials.select', [
                           'title' => __('laravel-smart-blog::blog.category'),
@@ -33,23 +43,23 @@
                 </div>
                 
                 {{-- layout --}}
-                    <div class="col-12">
-                       @include('laravel-smart-blog::partials.select', [
-                             'title' => __('laravel-smart-blog::blog.layout'),
-                             'name' => 'layout',
-                             'placeholder' => __('general.select_layout'),
-                             'records' => [
-                                 '1' => 'Bootstrap Wall',
-                                 '2' => 'Pinterest Wall',
-                             ],
-                             'liveSearch' => 'false',
-                             'mobileNativeMenu' => true,
-                             'selected' => old('layout'),
-                             'required' => true,
-                       ])
-                   </div>
+                <div class="col-12">
+                   @include('laravel-smart-blog::partials.select', [
+                         'title' => __('laravel-smart-blog::blog.layout'),
+                         'name' => 'layout',
+                         'placeholder' => __('general.select_layout'),
+                         'records' => [
+                             '1' => 'Bootstrap Wall',
+                             '2' => 'Pinterest Wall',
+                         ],
+                         'liveSearch' => 'false',
+                         'mobileNativeMenu' => true,
+                         'selected' => old('layout'),
+                         'required' => true,
+                   ])
+               </div>
                    
-                {{-- columns --}}
+                {{-- columns_number --}}
                 <div class="col-12">
                    @include('laravel-smart-blog::partials.select', [
                          'title' => __('laravel-smart-blog::blog.columns_number'),
@@ -68,6 +78,7 @@
                    ])
                </div>
                
+               {{-- columns_width --}}
                <div class="col-12">
                    @include('laravel-smart-blog::partials.input', [
                          'title' => __('laravel-smart-blog::blog.columns_width'),

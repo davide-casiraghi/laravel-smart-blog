@@ -6,6 +6,7 @@ return [
     'edit_blog' => 'Edit blog',
     'category' => 'Category',
     'post' => 'Post',
+    'name' => 'Blog name',
     'layout' => 'Layout',
     'columns_number' => 'Columns number (Bootstrap wall layout)',
     'columns_width' => 'Column width (Pinterest layout)',

@@ -1,6 +1,5 @@
 @extends('laravel-smart-blog::blogs.layout')
 
-
 @section('content')
     <div class="container max-w-md px-0">
         <div class="row">

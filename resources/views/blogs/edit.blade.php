@@ -17,8 +17,20 @@
             @csrf
             @method('PUT')
 
-            {{-- category_id --}}
+            
              <div class="row">
+                 {{-- Blog name --}}
+                 <div class="col-12">
+                     @include('laravel-smart-blog::partials.input', [
+                           'title' => __('laravel-smart-blog::blog.name'),
+                           'name' => 'name',
+                           'placeholder' => '',
+                           'value' => $blog->name,
+                           'required' => true,
+                     ])
+                 </div>
+                 
+                 {{-- category_id --}}
                  <div class="col-12">
                     @include('laravel-smart-blog::partials.select', [
                           'title' => __('laravel-smart-blog::blog.category'),
@@ -49,7 +61,7 @@
                        ])
                    </div>
                    
-                {{-- columns --}}
+                {{-- columns_number --}}
                 <div class="col-12">
                    @include('laravel-smart-blog::partials.select', [
                          'title' => __('laravel-smart-blog::blog.columns_number'),
@@ -68,6 +80,7 @@
                    ])
                </div>
                
+               {{-- columns_width --}}
                <div class="col-12">
                    @include('laravel-smart-blog::partials.input', [
                          'title' => __('laravel-smart-blog::blog.columns_width'),
