@@ -56,6 +56,7 @@ class LaravelSmartBlogServiceProvider extends ServiceProvider
             */
             $migrations = [
                      'CreateBlogsTable' => 'create_blogs_table',
+                     'CreateBlogTranslationsTable' => 'create_blog_translations_table',
                      'CreateCategoriesTable' => 'create_categories_table',
                      'CreateCategoryTranslationsTable' => 'create_category_translations_table',
                      'CreatePostsTable' => 'create_posts_table',
