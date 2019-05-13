@@ -11,6 +11,7 @@ return [
     'category' => 'Categoria',
     'link_to_this_post' => 'Link a questo post',
     'before_post_contents' => 'Jumbotron - Prima del post',
+    'intro_text' => 'Introduzione',
     'text' => 'Testo',
     'after_post_contents' => 'Jumbotron - Dopo del post',
     'upload_post_image' => 'Upload immagine post',
