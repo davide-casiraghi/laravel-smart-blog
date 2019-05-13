@@ -10,9 +10,9 @@ return [
     'title' => 'Titolo',
     'category' => 'Categoria',
     'link_to_this_post' => 'Link a questo post',
-    'before_post_contents' => 'Prima del post',
+    'before_post_contents' => 'Jumbotron - Prima del post',
     'text' => 'Testo',
-    'after_post_contents' => 'Dopo del post',
+    'after_post_contents' => 'Jumbotron - Dopo del post',
     'upload_post_image' => 'Upload immagine post',
     'status' => 'Stato',
 ];
