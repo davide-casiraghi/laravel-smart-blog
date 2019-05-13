@@ -5,6 +5,9 @@ namespace DavideCasiraghi\LaravelSmartBlog\Tests;
 use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelSmartBlog\Models\Post;
 use DavideCasiraghi\LaravelSmartBlog\Models\Category;
+use Illuminate\Support\Facades\Storage;
+
+use DavideCasiraghi\LaravelSmartBlog\Http\Controllers\PostController;
 
 class PostControllerTest extends TestCase
 {
@@ -138,5 +141,45 @@ class PostControllerTest extends TestCase
 
         $response = $this->delete('/posts/'.$post->id);
         $response->assertRedirect('/posts');
+    }
+    
+    /** @test */
+    public function it_uploads_a_post_intro_image()
+    {
+        $this->authenticateAsAdmin();
+        
+        // Delete directory
+        //dd(Storage::directories('public/images')); // List directories
+        $directory = 'public/images/posts_intro_images/';
+        Storage::deleteDirectory($directory);
+
+        // Symulate the upload
+        $local_test_file = __DIR__.'/test_images/test_image_1.jpg';
+        $uploadedFile = new \Illuminate\Http\UploadedFile(
+                $local_test_file,
+                'test_image_1.jpg',
+                'image/jpg',
+                null,
+                null,
+                true
+            );
+
+        // Call the function uploadImageOnServer()
+        $imageFile = $uploadedFile;
+        $imageName = $imageFile->hashName();
+        $imageSubdir = 'posts_intro_images';
+        $imageWidth = '968';
+        $thumbWidth = '300';
+
+        PostController::uploadImageOnServer($imageFile, $imageName, $imageSubdir, $imageWidth, $thumbWidth);
+
+        // Leave this lines here - they can be very useful for new tests
+        //$directory = "/";
+        //dump(Storage::allDirectories($directory));
+        //dd(Storage::allFiles($directory));
+
+        $filePath = 'public/images/'.$imageSubdir.'/'.$imageName;
+
+        Storage::assertExists($filePath);
     }
 }
