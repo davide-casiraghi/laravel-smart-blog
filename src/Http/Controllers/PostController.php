@@ -299,7 +299,7 @@ class PostController extends Controller
         $post->translateOrNew('en')->title = $request->get('title');
         //$post->body = $request->get('body');
         $post->translateOrNew('en')->body = clean($request->get('body'));
-        $post->translateOrNew('en')->body = clean($request->get('intro_text'));
+        $post->translateOrNew('en')->intro_text = $request->get('intro_text');
         $post->created_by = \Auth::user()->id;
         $post->translateOrNew('en')->slug = Str::slug($post->title, '-');
         $post->category_id = $request->get('category_id');
