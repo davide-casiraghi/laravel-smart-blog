@@ -21,6 +21,7 @@ $factory->define(DavideCasiraghi\LaravelSmartBlog\Models\Blog::class, function (
     return [
         'name:en' => $blog_name,
         'slug:en' => $slug,
+        'description:en' => $faker->paragraph,
         'category_id' => '1',
         'layout' => '1',
         'columns_number' => '3',
