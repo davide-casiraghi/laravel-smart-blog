@@ -13,12 +13,12 @@ class CreateBlogsTable extends Migration
 
             $table->integer('category_id')->nullable();
             $table->integer('layout');
-            $table->integer('columns_number');
-            $table->integer('columns_width');
+            $table->integer('columns_number')->nullable();
+            $table->integer('columns_width')->nullable();
 
             $table->integer('article_order');
             $table->integer('items_per_page');
-            $table->integer('featured_articles');
+            $table->integer('featured_articles')->nullable();
 
             $table->boolean('show_category_title')->nullable();
             $table->boolean('show_category_subtitle')->nullable();

@@ -14,10 +14,13 @@ use Illuminate\Foundation\Auth\User;
 */
 
 $factory->define(DavideCasiraghi\LaravelSmartBlog\Models\Blog::class, function (Faker $faker) {
-    $category = factory(\DavideCasiraghi\LaravelSmartBlog\Models\Category::class)->create();
+    $blog_name = $faker->name;
+    $slug = Str::slug($blog_name, '-').rand(10000, 100000);
     $user = User::first();
 
     return [
+        'name:en' => $blog_name,
+        'slug:en' => $slug,
         'category_id' => '1',
         'layout' => '1',
         'columns_number' => '3',
