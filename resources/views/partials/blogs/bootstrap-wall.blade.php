@@ -3,7 +3,7 @@
 <div class="row">
         
     @foreach ($posts as $key => $post)
-        <div class="col-12 {{$columnsBootstrapClass}}">
+        <div class="col-12 col-sm-6 {{$columnsBootstrapClass}} mb-5">
             <h4>{{ $post->title }}</h4>
         
             @if(!empty($post->introimage))
