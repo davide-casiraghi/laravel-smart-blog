@@ -15,6 +15,8 @@
                 <h2>{{ $post->title }}</h2>
             </div>
             <div class="postBody col-12 text-base-longtext">
+                {!! $post->intro_text !!}
+                <br>
                 {!! $post->body !!}
             </div>
         </div>

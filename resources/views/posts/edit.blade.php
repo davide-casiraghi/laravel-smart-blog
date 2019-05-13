@@ -72,7 +72,7 @@
                     ])
                 </div>
                 <div class="col-12">
-                    @include('laravel-smart-blog::partials.textarea-post', [
+                    @include('laravel-smart-blog::partials.textarea-plain', [
                         'title' => __('laravel-smart-blog::post.intro_text'),
                         'name' => 'intro_text',
                         'placeholder' => '',

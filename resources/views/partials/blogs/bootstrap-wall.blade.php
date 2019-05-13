@@ -14,7 +14,7 @@
                 </div>
             @endif
             
-            {!!$post->body!!}
+            {!!$post->intro_text!!}
             
         </div>
     @endforeach

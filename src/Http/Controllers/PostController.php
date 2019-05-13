@@ -280,7 +280,7 @@ class PostController extends Controller
         $post = Post::
                 where('post_translations.slug', $slug)
                 ->join('post_translations', 'posts.id', '=', 'post_translations.post_id')
-                ->select('posts.*', 'post_translations.title', 'post_translations.body', 'post_translations.before_content', 'post_translations.after_content')
+                ->select('posts.*', 'post_translations.title', 'post_translations.intro_text', 'post_translations.body', 'post_translations.before_content', 'post_translations.after_content')
                 ->first();
 
         return $this->show($post);
@@ -299,6 +299,7 @@ class PostController extends Controller
         $post->translateOrNew('en')->title = $request->get('title');
         //$post->body = $request->get('body');
         $post->translateOrNew('en')->body = clean($request->get('body'));
+        $post->translateOrNew('en')->body = clean($request->get('intro_text'));
         $post->created_by = \Auth::user()->id;
         $post->translateOrNew('en')->slug = Str::slug($post->title, '-');
         $post->category_id = $request->get('category_id');
