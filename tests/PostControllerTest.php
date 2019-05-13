@@ -2,11 +2,10 @@
 
 namespace DavideCasiraghi\LaravelSmartBlog\Tests;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelSmartBlog\Models\Post;
 use DavideCasiraghi\LaravelSmartBlog\Models\Category;
-use Illuminate\Support\Facades\Storage;
-
 use DavideCasiraghi\LaravelSmartBlog\Http\Controllers\PostController;
 
 class PostControllerTest extends TestCase
@@ -142,12 +141,12 @@ class PostControllerTest extends TestCase
         $response = $this->delete('/posts/'.$post->id);
         $response->assertRedirect('/posts');
     }
-    
+
     /** @test */
     public function it_uploads_a_post_intro_image()
     {
         $this->authenticateAsAdmin();
-        
+
         // Delete directory
         //dd(Storage::directories('public/images')); // List directories
         $directory = 'public/images/posts_intro_images/';
