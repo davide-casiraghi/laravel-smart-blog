@@ -84,8 +84,8 @@ class PostTranslationController extends Controller
         $postTranslation->locale = $request->get('language_code');
 
         $postTranslation->title = $request->get('title');
-        //$postTranslation->body = $request->get('body');
         $postTranslation->body = clean($request->get('body'));
+        $postTranslation->intro_text = clean($request->get('intro_text'));
         $postTranslation->slug = Str::slug($postTranslation->title, '-');
 
         $postTranslation->before_content = $request->get('before_content');
@@ -117,6 +117,7 @@ class PostTranslationController extends Controller
         $pt = [];
         $pt['title'] = $request->get('title');
         $pt['body'] = clean($request->get('body'));
+        $pt['intro_text'] = clean($request->get('intro_text'));
         $pt['slug'] = Str::slug($request->get('title'), '-');
         $pt['before_content'] = $request->get('before_content');
         $pt['after_content'] = $request->get('after_content');
