@@ -184,8 +184,8 @@ class BlogController extends Controller
 
         $blog->show_create_date = filter_var($request->show_create_date, FILTER_VALIDATE_BOOLEAN);
         $blog->show_modify_date = filter_var($request->show_modify_date, FILTER_VALIDATE_BOOLEAN);
-        $blog->show_publish_date = filter_var($request->show_publish_date, FILTER_VALIDATE_BOOLEAN); 
-        $blog->show_read_more = filter_var($request->show_read_more, FILTER_VALIDATE_BOOLEAN); 
+        $blog->show_publish_date = filter_var($request->show_publish_date, FILTER_VALIDATE_BOOLEAN);
+        $blog->show_read_more = filter_var($request->show_read_more, FILTER_VALIDATE_BOOLEAN);
 
         $blog->created_by = \Auth::user()->id;
 
