@@ -25,7 +25,7 @@ class BlogTranslationControllerTest extends TestCase
     }
 
     /** @test */
-    public function it_stores_a_valid_blog_translation()
+    /*public function it_stores_a_valid_blog_translation()
     {
         $this->authenticateAsAdmin();
         $blog = factory(Blog::class)->create([
@@ -45,10 +45,10 @@ class BlogTranslationControllerTest extends TestCase
 
         $this->assertDatabaseHas('blog_translations', ['locale' => 'es', 'name' => 'Spanish category name']);
         $response->assertViewIs('laravel-smart-blog::blogs.index');
-    }
+    }*/
 
     /** @test */
-    public function it_does_not_store_invalid_blog_translation()
+    /*public function it_does_not_store_invalid_blog_translation()
     {
         $this->authenticateAsAdmin();
         $response = $this
@@ -56,10 +56,10 @@ class BlogTranslationControllerTest extends TestCase
             ->post('/blogTranslations/store', []);
 
         $response->assertSessionHasErrors();
-    }
+    }*/
 
     /** @test */
-    public function it_displays_the_blog_translation_edit_page()
+    /*public function it_displays_the_blog_translation_edit_page()
     {
         $this->authenticateAsAdmin();
         $blog = factory(Blog::class)->create([
@@ -78,10 +78,10 @@ class BlogTranslationControllerTest extends TestCase
         $response = $this->get('/blogTranslations/'.$blog->id.'/'.'es'.'/edit');
         $response->assertViewIs('laravel-smart-blog::blogTranslations.edit')
                  ->assertStatus(200);
-    }
+    }*/
 
     /** @test */
-    public function it_updates_valid_blog_translation()
+    /*public function it_updates_valid_blog_translation()
     {
         $this->authenticateAsAdmin();
         $blog = factory(Blog::class)->create([
@@ -113,10 +113,10 @@ class BlogTranslationControllerTest extends TestCase
         //$response = $this->followingRedirects()
                         // ->put('/blogTranslations/update', [])->dump();
                         // ->assertSessionHasErrors();
-    }
+    }*/
 
     /** @test */
-    public function it_does_not_update_invalid_blog()
+    /*public function it_does_not_update_invalid_blog()
     {
         $this->authenticateAsAdmin();
         $blog = factory(Blog::class)->create([
@@ -141,10 +141,10 @@ class BlogTranslationControllerTest extends TestCase
         $response = $this->followingRedirects()
                          ->put('/blogTranslations/update', $attributes);
         $response->assertSessionHasErrors();
-    }
+    }*/
 
     /** @test */
-    public function it_deletes_blog_translation()
+    /*public function it_deletes_blog_translation()
     {
         $this->authenticateAsAdmin();
         $blog = factory(Blog::class)->create();
@@ -159,5 +159,5 @@ class BlogTranslationControllerTest extends TestCase
 
         $response = $this->delete('/blogTranslations/destroy/2');
         $response->assertRedirect('/blogs');
-    }
+    }*/
 }
