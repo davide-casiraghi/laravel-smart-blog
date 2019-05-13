@@ -18,6 +18,12 @@
                 {!!$post->intro_text!!}
             @endif
             
+            @if(!empty($blog->show_read_more))
+                <br>
+                <a href="{{ route('posts.show',$post->id) }}">@lang('laravel-smart-blog::blog.read_more')</a>
+            @endif
+            
+            
         </div>
     @endforeach
 

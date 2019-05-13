@@ -25,4 +25,5 @@ return [
     'show_modify_date' => 'Mostra data modifica',
     'show_publish_date' => 'Mostra data pubblicazione',
     'show_read_more' => 'Mostra leggi tutto',
+    'read_more' => 'Leggi tutto',
 ];
