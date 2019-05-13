@@ -262,7 +262,6 @@ class PostController extends Controller
     public function postdata($post_id)
     {
         $ret = Post::where('id', $post_id)->first();
-        //dump($ret);
 
         return $ret;
     }
@@ -297,7 +296,6 @@ class PostController extends Controller
     public function saveOnDb($request, $post)
     {
         $post->translateOrNew('en')->title = $request->get('title');
-        //$post->body = $request->get('body');
         $post->translateOrNew('en')->body = clean($request->get('body'));
         $post->translateOrNew('en')->intro_text = $request->get('intro_text');
         $post->created_by = \Auth::user()->id;
@@ -306,14 +304,6 @@ class PostController extends Controller
 
         $post->status = $request->get('status');
         $post->featured = $request->get('featured');
-
-        // Intro image  picture upload
-        /*if ($request->file('introimage')) {
-            $introImagePictureFile = $request->file('introimage');
-            $imageName = $introImagePictureFile->hashName();
-            //$path = $introImagePictureFile->store('public/images/posts_intro_images');
-            $post->introimage = $imageName;
-        }*/
 
         // Intro image  picture upload
         if ($request->file('introimage')) {

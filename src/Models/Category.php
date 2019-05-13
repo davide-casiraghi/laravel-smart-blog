@@ -32,7 +32,7 @@ class Category extends Model
      *
      * @return array
      */
-    public static function getCategoriesArray()
+    /*public static function getCategoriesArray()
     {
         $ret = [];
         $categories = self::get();
@@ -42,7 +42,7 @@ class Category extends Model
         }
 
         return $ret;
-    }
+    }*/
 
     /***************************************************************************/
 

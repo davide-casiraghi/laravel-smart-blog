@@ -30,12 +30,12 @@ class Post extends Model
      * @param  int $cat_id
      * @return \DavideCasiraghi\LaravelSmartBlog\Models\Post
      */
-    public static function postsByCategory($cat_id)
+    /*public static function postsByCategory($cat_id)
     {
         $ret = self::
                where('category_id', $cat_id)
                ->get();
 
         return $ret;
-    }
+    }*/
 }
