@@ -24,7 +24,7 @@ class Category extends Model
 
     /***************************************************************************/
 
-    /**
+    /*
      * Return the post categories array
      * the collection is transferred to an array to symulate the pluck behaviour,
      * and get the category name translated or the relative fallbacks.
