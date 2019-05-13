@@ -5,6 +5,7 @@ namespace DavideCasiraghi\LaravelSmartBlog\Tests;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Foundation\Testing\WithFaker;
 use DavideCasiraghi\LaravelSmartBlog\Models\Blog;
+use DavideCasiraghi\LaravelSmartBlog\Models\Category;
 
 class BlogControllerTest extends TestCase
 {
@@ -92,12 +93,13 @@ class BlogControllerTest extends TestCase
     public function it_displays_the_blog_show_page()
     {
         $this->authenticateAsAdmin();
-
+        
+        $category = factory(Category::class)->create();
         $blog = factory(Blog::class)->create();
         
-        $response = $this->get('/blogs/'.$blog->id)->dump();
-        //$response->assertViewIs('laravel-smart-blog::blogs.show')
-        //         ->assertStatus(200);
+        $response = $this->get('/blogs/'.$blog->id);
+        $response->assertViewIs('laravel-smart-blog::blogs.show')
+                 ->assertStatus(200);
     }
 
     /** @test */
