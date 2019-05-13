@@ -93,10 +93,10 @@ class BlogControllerTest extends TestCase
     public function it_displays_the_blog_show_page()
     {
         $this->authenticateAsAdmin();
-        
+
         $category = factory(Category::class)->create();
         $blog = factory(Blog::class)->create();
-        
+
         $response = $this->get('/blogs/'.$blog->id);
         $response->assertViewIs('laravel-smart-blog::blogs.show')
                  ->assertStatus(200);
