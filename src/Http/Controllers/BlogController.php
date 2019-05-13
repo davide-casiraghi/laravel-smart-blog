@@ -171,21 +171,21 @@ class BlogController extends Controller
 
         $blog->items_per_page = $request->get('items_per_page');
         $blog->featured_articles = $request->get('featured_articles');
-        $blog->show_category_title = ($request->show_category_title == 'on') ? 1 : 0;
-        $blog->show_category_subtitle = ($request->show_category_subtitle == 'on') ? 1 : 0;
-        $blog->show_category_description = ($request->show_category_description == 'on') ? 1 : 0;
-        $blog->show_category_image = ($request->show_category_image == 'on') ? 1 : 0;
+        $blog->show_category_title = filter_var($request->show_category_title, FILTER_VALIDATE_BOOLEAN);
+        $blog->show_category_subtitle = filter_var($request->show_category_subtitle, FILTER_VALIDATE_BOOLEAN);
+        $blog->show_category_description = filter_var($request->show_category_description, FILTER_VALIDATE_BOOLEAN);
+        $blog->show_category_image = filter_var($request->show_category_image, FILTER_VALIDATE_BOOLEAN);
 
-        $blog->show_post_title = ($request->show_post_title == 'on') ? 1 : 0;
-        $blog->post_linked_titles = ($request->post_linked_titles == 'on') ? 1 : 0;
-        $blog->show_post_intro_text = ($request->show_post_intro_text == 'on') ? 1 : 0;
-        $blog->show_post_author = ($request->show_post_author == 'on') ? 1 : 0;
-        $blog->link_post_author = ($request->link_post_author == 'on') ? 1 : 0;
+        $blog->show_post_title = filter_var($request->show_post_title, FILTER_VALIDATE_BOOLEAN);
+        $blog->post_linked_titles = filter_var($request->post_linked_titles, FILTER_VALIDATE_BOOLEAN);
+        $blog->show_post_intro_text = filter_var($request->show_post_intro_text, FILTER_VALIDATE_BOOLEAN);
+        $blog->show_post_author = filter_var($request->show_post_author, FILTER_VALIDATE_BOOLEAN);
+        $blog->link_post_author = filter_var($request->link_post_author, FILTER_VALIDATE_BOOLEAN);
 
-        $blog->show_create_date = ($request->show_create_date == 'on') ? 1 : 0;
-        $blog->show_modify_date = ($request->show_modify_date == 'on') ? 1 : 0;
-        $blog->show_publish_date = ($request->show_publish_date == 'on') ? 1 : 0;
-        $blog->show_read_more = ($request->show_read_more == 'on') ? 1 : 0;
+        $blog->show_create_date = filter_var($request->show_create_date, FILTER_VALIDATE_BOOLEAN);
+        $blog->show_modify_date = filter_var($request->show_modify_date, FILTER_VALIDATE_BOOLEAN);
+        $blog->show_publish_date = filter_var($request->show_publish_date, FILTER_VALIDATE_BOOLEAN); 
+        $blog->show_read_more = filter_var($request->show_read_more, FILTER_VALIDATE_BOOLEAN); 
 
         $blog->created_by = \Auth::user()->id;
 
