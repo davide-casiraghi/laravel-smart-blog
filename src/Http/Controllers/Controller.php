@@ -85,7 +85,7 @@ class Controller extends BaseController
                                 ->save(storage_path($destinationPath.$imageName), 75);
 
         // Create the thumb
-        $image->resize($thumbWidth, null,
+        $image->resize((int)$thumbWidth, null,
                     function ($constraint) {
                         $constraint->aspectRatio();
                     })
