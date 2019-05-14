@@ -78,7 +78,7 @@ class Controller extends BaseController
         // -  resize and store the image to a width of 300 and constrain aspect ratio (auto height)
         // - save file as jpg with medium quality
         $image = Image::make($imageFile->getRealPath())
-                                ->resize($imageWidth, null,
+                                ->resize((int)$imageWidth, null,
                                     function ($constraint) {
                                         $constraint->aspectRatio();
                                     })
