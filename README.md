@@ -23,9 +23,12 @@ npm install bricklayer
 ```
 ## Authorization
 > To work the package aspect that in your user model and table you have a field called **group** that can have this possible values:
-- null: registered user 
+- null: Registered user 
 - 1: Super Admin
 - 2: Admin
+
+> Just the users that have Admin and Super admin privileges can access to the routes to create, edit and delete the blogs, categories and posts.
+
 
 ## Load the CSS and JS files
 
