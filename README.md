@@ -21,7 +21,11 @@ Then install Bricklayer.js trough npm
 ```bash
 npm install bricklayer  
 ```
-
+## Authorization
+> To work the package aspect that in your user model and table you have a field called **group** that can have this possible values:
+- null: registered user 
+- 1: Super Admin
+- 2: Admin
 
 ## Load the CSS and JS files
 
