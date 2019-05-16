@@ -28,7 +28,7 @@ class LaravelSmartBlogServiceProvider extends ServiceProvider
 
             // Publishing the views.
             $this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-smart-blog'),
+                __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-smart-blog/'),
             ], 'views');
 
             // Publishing assets.
