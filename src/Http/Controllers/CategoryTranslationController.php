@@ -98,7 +98,7 @@ class CategoryTranslationController extends Controller
         $categoryTranslation->save();
 
         return redirect()->route('categories.index')
-                        ->with('success', 'Translation created successfully.');
+                        ->with('success', __('laravel-smart-blog::messages.category_translation_added_successfully'));
     }
 
     /***************************************************************************/
@@ -138,7 +138,7 @@ class CategoryTranslationController extends Controller
         $categoryTranslation->update($category_t);
 
         return redirect()->route('categories.index')
-                        ->with('success', 'Translation updated successfully');
+                        ->with('success', __('laravel-smart-blog::messages.category_translation_updated_successfully'));
     }
 
     /***************************************************************************/
@@ -155,6 +155,6 @@ class CategoryTranslationController extends Controller
         $categoryTranslation->delete();
 
         return redirect()->route('categories.index')
-                        ->with('success', __('messages.category_translation_deleted_successfully'));
+                        ->with('success', __('laravel-smart-blog::messages.category_translation_deleted_successfully'));
     }
 }

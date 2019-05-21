@@ -94,7 +94,7 @@ class PostTranslationController extends Controller
         $postTranslation->save();
 
         return redirect()->route('posts.index')
-                        ->with('success', 'Translation created successfully.');
+                        ->with('success', __('laravel-smart-blog::messages.article_translation_added_successfully'));
     }
 
     /***************************************************************************/
@@ -125,7 +125,7 @@ class PostTranslationController extends Controller
         $postTranslation->update($pt);
 
         return redirect()->route('posts.index')
-                        ->with('success', 'Post updated successfully');
+                        ->with('success', __('laravel-smart-blog::messages.article_translation_updated_successfully'));
     }
 
     /***************************************************************************/
@@ -142,6 +142,6 @@ class PostTranslationController extends Controller
         $postTranslation->delete();
 
         return redirect()->route('posts.index')
-                        ->with('success', __('messages.post_translation_deleted_successfully'));
+                        ->with('success', __('laravel-smart-blog::messages.post_translation_deleted_successfully'));
     }
 }

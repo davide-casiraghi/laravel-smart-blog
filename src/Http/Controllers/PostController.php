@@ -126,7 +126,7 @@ class PostController extends Controller
         $this->saveOnDb($request, $post);
 
         return redirect()->route('posts.index')
-                        ->with('success', __('messages.article_added_successfully'));
+                        ->with('success', __('laravel-smart-blog::messages.article_added_successfully'));
     }
 
     /***************************************************************************/
@@ -232,7 +232,7 @@ class PostController extends Controller
         $this->saveOnDb($request, $post);
 
         return redirect()->route('posts.index')
-                        ->with('success', __('messages.article_updated_successfully'));
+                        ->with('success', __('laravel-smart-blog::messages.article_updated_successfully'));
     }
 
     /***************************************************************************/
@@ -248,7 +248,7 @@ class PostController extends Controller
         $post->delete();
 
         return redirect()->route('posts.index')
-                        ->with('success', __('messages.article_deleted_successfully'));
+                        ->with('success', __('laravel-smart-blog::messages.article_deleted_successfully'));
     }
 
     /***************************************************************************/

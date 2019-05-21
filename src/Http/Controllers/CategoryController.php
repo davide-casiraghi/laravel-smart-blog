@@ -65,7 +65,7 @@ class CategoryController extends Controller
         $this->saveOnDb($request, $category);
 
         return redirect()->route('categories.index')
-                        ->with('success', __('messages.category_added_successfully'));
+                        ->with('success', __('laravel-smart-blog::messages.category_added_successfully'));
     }
 
     /**
@@ -106,7 +106,7 @@ class CategoryController extends Controller
         $this->saveOnDb($request, $category);
 
         return redirect()->route('categories.index')
-                        ->with('success', __('messages.category_updated_successfully'));
+                        ->with('success', __('laravel-smart-blog::messages.category_updated_successfully'));
     }
 
     /**
@@ -120,7 +120,7 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect()->route('categories.index')
-                        ->with('success', __('messages.category_deleted_successfully'));
+                        ->with('success', __('laravel-smart-blog::messages.category_deleted_successfully'));
     }
 
     /***************************************************************************/

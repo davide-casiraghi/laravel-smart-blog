@@ -72,7 +72,7 @@ class BlogController extends Controller
         $this->saveOnDb($request, $blog);
 
         return redirect()->route('blogs.index')
-                        ->with('success', __('messages.blog_added_successfully'));
+                        ->with('success', __('laravel-smart-blog::messages.blog_added_successfully'));
     }
 
     /**
@@ -135,7 +135,7 @@ class BlogController extends Controller
         $this->saveOnDb($request, $blog);
 
         return redirect()->route('blogs.index')
-                        ->with('success', __('messages.blog_updated_successfully'));
+                        ->with('success', __('laravel-smart-blog::messages.blog_updated_successfully'));
     }
 
     /**
@@ -149,7 +149,7 @@ class BlogController extends Controller
         $blog->delete();
 
         return redirect()->route('blogs.index')
-                        ->with('success', __('messages.blog_deleted_successfully'));
+                        ->with('success', __('laravel-smart-blog::messages.blog_deleted_successfully'));
     }
 
     /***************************************************************************/

@@ -98,7 +98,7 @@ class BlogTranslationController extends Controller
         $blogTranslation->save();
 
         return redirect()->route('blogs.index')
-                        ->with('success', 'Translation created successfully.');
+                        ->with('success', __('laravel-smart-blog::messages.blog_translation_added_successfully'));
     }
 
     /***************************************************************************/
@@ -138,7 +138,7 @@ class BlogTranslationController extends Controller
         $blogTranslation->update($blog_t);
 
         return redirect()->route('blogs.index')
-                        ->with('success', 'Translation updated successfully');
+                        ->with('success', __('laravel-smart-blog::messages.blog_translation_updated_successfully'));
     }
 
     /***************************************************************************/
@@ -155,6 +155,6 @@ class BlogTranslationController extends Controller
         $blogTranslation->delete();
 
         return redirect()->route('blogs.index')
-                        ->with('success', __('messages.blog_translation_deleted_successfully'));
+                        ->with('success', __('laravel-smart-blog::messages.blog_translation_deleted_successfully'));
     }
 }
