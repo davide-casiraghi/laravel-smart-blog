@@ -281,7 +281,7 @@ class PostController extends Controller
                 ->join('post_translations', 'posts.id', '=', 'post_translations.post_id')
                 ->select('posts.*', 'post_translations.title', 'post_translations.intro_text', 'post_translations.body', 'post_translations.before_content', 'post_translations.after_content')
                 ->first();
-
+                
         return $this->show($post);
     }
 

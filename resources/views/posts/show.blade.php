@@ -11,12 +11,13 @@
 @section('content')
     <div class="container max-w-md px-0">
         <div class="row m-0 p-4 white-bg rounded">
-            <div class="postTitle col-12 mb-4 mt-4">
+            <div class="postTitle col-12 mt-4">
                 <h2>{{ $post->title }}</h2>
             </div>
-            <div class="postBody col-12 text-base-longtext">
+            <div class="postIntroText col-12 mb-4 text-2xl">
                 {!! $post->intro_text !!}
-                <br>
+            </div>
+            <div class="postBody col-12">
                 {!! $post->body !!}
             </div>
         </div>
