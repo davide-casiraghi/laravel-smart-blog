@@ -18,8 +18,8 @@ use DavideCasiraghi\LaravelSmartBlog\Models\Post;
 use DavideCasiraghi\LaravelSmartBlog\Models\Category;
 // use App\Classes\CommunityGoalsClass;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-use DavideCasiraghi\BootstrapAccordion\Facades\BootstrapAccordion;
 use DavideCasiraghi\ResponsiveGallery\Facades\ResponsiveGallery;
+use DavideCasiraghi\BootstrapAccordion\Facades\BootstrapAccordion;
 
 class PostController extends Controller
 {
@@ -146,7 +146,7 @@ class PostController extends Controller
         $post->body = BootstrapAccordion::getAccordions($post->body, 'plus-minus-circle');
 
         // Gallery
-        $publicPath = public_path("storage");
+        $publicPath = public_path('storage');
         $post->body = ResponsiveGallery::getGallery($post->body, $publicPath);
 
         /*        $accordionClass = new AccordionClass();
