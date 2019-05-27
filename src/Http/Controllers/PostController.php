@@ -140,10 +140,10 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-            
+
                 // Accordion
-                $post->body = BootstrapAccordion::getAccordions($post->body, 'plus-minus-circle');
-        
+        $post->body = BootstrapAccordion::getAccordions($post->body, 'plus-minus-circle');
+
         /*        $accordionClass = new AccordionClass();
                 $post->body = $accordionClass->getAccordion($post->body);
                 $post->before_content = $accordionClass->getAccordion($post->before_content);
@@ -284,7 +284,7 @@ class PostController extends Controller
                 ->join('post_translations', 'posts.id', '=', 'post_translations.post_id')
                 ->select('posts.*', 'post_translations.title', 'post_translations.intro_text', 'post_translations.body', 'post_translations.before_content', 'post_translations.after_content')
                 ->first();
-                
+
         return $this->show($post);
     }
 
