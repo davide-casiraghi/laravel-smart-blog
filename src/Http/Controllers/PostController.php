@@ -20,6 +20,7 @@ use DavideCasiraghi\LaravelSmartBlog\Models\Category;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use DavideCasiraghi\ResponsiveGallery\Facades\ResponsiveGallery;
 use DavideCasiraghi\BootstrapAccordion\Facades\BootstrapAccordion;
+use DavideCasiraghi\LaravelCards\Facades\LaravelCards;
 
 class PostController extends Controller
 {
@@ -151,7 +152,8 @@ class PostController extends Controller
         $post->before_content = ResponsiveGallery::getGallery($post->before_content, $publicPath);
         $post->after_content = ResponsiveGallery::getGallery($post->after_content, $publicPath);
 
-
+        // Cards
+        $post->body = LaravelCards::replace_card_snippets_with_template($post->body);
 
         /*        $accordionClass = new AccordionClass();
                 $post->body = $accordionClass->getAccordion($post->body);

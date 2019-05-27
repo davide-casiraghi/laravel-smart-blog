@@ -57,6 +57,7 @@ abstract class TestCase extends BaseTestCase
             \Dimsav\Translatable\TranslatableServiceProvider::class,
             \DavideCasiraghi\BootstrapAccordion\AccordionServiceProvider::class,
             \DavideCasiraghi\ResponsiveGallery\ResponsiveGalleryServiceProvider::class,
+            \DavideCasiraghi\LaravelCards\LaravelCardsServiceProvider::class,
         ];
     }
 
@@ -68,6 +69,7 @@ abstract class TestCase extends BaseTestCase
             'LaravelLocalization' => \Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
             'BootstrapAccordion' => \DavideCasiraghi\BootstrapAccordion\Facades\BootstrapAccordion::class,
             'ResponsiveGallery' => \DavideCasiraghi\ResponsiveGallery\Facades\ResponsiveGallery::class,
+            'LaravelCards' => \DavideCasiraghi\LaravelCards\Facades\LaravelCards::class,
         ];
     }
 
