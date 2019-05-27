@@ -151,6 +151,8 @@ class PostController extends Controller
         $post->before_content = ResponsiveGallery::getGallery($post->before_content, $publicPath);
         $post->after_content = ResponsiveGallery::getGallery($post->after_content, $publicPath);
 
+
+
         /*        $accordionClass = new AccordionClass();
                 $post->body = $accordionClass->getAccordion($post->body);
                 $post->before_content = $accordionClass->getAccordion($post->before_content);
