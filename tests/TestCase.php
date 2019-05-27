@@ -55,6 +55,7 @@ abstract class TestCase extends BaseTestCase
             \Mews\Purifier\PurifierServiceProvider::class,
             \Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
             \Dimsav\Translatable\TranslatableServiceProvider::class,
+            \DavideCasiraghi\BootstrapAccordion\AccordionServiceProvider::class,
         ];
     }
 
@@ -64,6 +65,7 @@ abstract class TestCase extends BaseTestCase
             'LaravelSmartBlog' => LaravelSmartBlog::class, // facade called PhpResponsiveQuote and the name of the facade class
             'Purifier' => \Mews\Purifier\Facades\Purifier::class,
             'LaravelLocalization' => \Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
+            'BootstrapAccordion' => \DavideCasiraghi\BootstrapAccordion\Facades\BootstrapAccordion::class,
         ];
     }
 

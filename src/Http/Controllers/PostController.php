@@ -18,6 +18,7 @@ use DavideCasiraghi\LaravelSmartBlog\Models\Post;
 use DavideCasiraghi\LaravelSmartBlog\Models\Category;
 // use App\Classes\CommunityGoalsClass;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
+use DavideCasiraghi\BootstrapAccordion\Facades\BootstrapAccordion;
 
 class PostController extends Controller
 {
@@ -139,9 +140,11 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        /*
+            
                 // Accordion
-                $accordionClass = new AccordionClass();
+                $post->body = BootstrapAccordion::getAccordions($post->body, 'plus-minus-circle');
+        
+        /*        $accordionClass = new AccordionClass();
                 $post->body = $accordionClass->getAccordion($post->body);
                 $post->before_content = $accordionClass->getAccordion($post->before_content);
                 $post->after_content = $accordionClass->getAccordion($post->after_content);

@@ -17,6 +17,7 @@
     ],
     "require": {
         "php": "^7.1",
+        "davide-casiraghi/bootstrap-accordion-integrator": "^1.2",
         "dimsav/laravel-translatable": "^9.4",
         "illuminate/support": "5.8.*",
         "intervention/image": "^2.4",
