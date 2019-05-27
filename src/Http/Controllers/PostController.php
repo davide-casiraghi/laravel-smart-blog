@@ -17,10 +17,10 @@ use DavideCasiraghi\LaravelSmartBlog\Models\Post;
 // use App\Classes\CardsCarouselClass;
 use DavideCasiraghi\LaravelSmartBlog\Models\Category;
 // use App\Classes\CommunityGoalsClass;
+use DavideCasiraghi\LaravelCards\Facades\LaravelCards;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use DavideCasiraghi\ResponsiveGallery\Facades\ResponsiveGallery;
 use DavideCasiraghi\BootstrapAccordion\Facades\BootstrapAccordion;
-use DavideCasiraghi\LaravelCards\Facades\LaravelCards;
 
 class PostController extends Controller
 {
