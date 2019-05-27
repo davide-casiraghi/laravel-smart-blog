@@ -56,6 +56,7 @@ abstract class TestCase extends BaseTestCase
             \Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
             \Dimsav\Translatable\TranslatableServiceProvider::class,
             \DavideCasiraghi\BootstrapAccordion\AccordionServiceProvider::class,
+            \DavideCasiraghi\ResponsiveGallery\ResponsiveGalleryServiceProvider::class,
         ];
     }
 
@@ -66,6 +67,7 @@ abstract class TestCase extends BaseTestCase
             'Purifier' => \Mews\Purifier\Facades\Purifier::class,
             'LaravelLocalization' => \Mcamara\LaravelLocalization\Facades\LaravelLocalization::class,
             'BootstrapAccordion' => \DavideCasiraghi\BootstrapAccordion\Facades\BootstrapAccordion::class,
+            'ResponsiveGallery' => \DavideCasiraghi\ResponsiveGallery\Facades\ResponsiveGallery::class,
         ];
     }
 
