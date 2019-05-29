@@ -20,7 +20,7 @@
 
 <body> 
 
-        <div class="beforeContent pt-5">
+        <div class="beforeContent">
             @yield('beforeContent')
         </div>
 
