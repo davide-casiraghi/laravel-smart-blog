@@ -20,10 +20,18 @@
 
 <body> 
 
+        <div class="beforeContent pt-5">
+            @yield('beforeContent')
+        </div>
+
         <div id="app">
             <div class="container mt-5">
                 @yield('content')
             </div>
+        </div>
+        
+        <div class="afterContent">
+            @yield('afterContent')
         </div>
 
     {{-- JS --}}
