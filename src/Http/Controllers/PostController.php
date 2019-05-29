@@ -21,6 +21,7 @@ use DavideCasiraghi\LaravelCards\Facades\LaravelCards;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use DavideCasiraghi\ResponsiveGallery\Facades\ResponsiveGallery;
 use DavideCasiraghi\BootstrapAccordion\Facades\BootstrapAccordion;
+use DavideCasiraghi\LaravelJumbotronImages\Facades\LaravelJumbotronImages;
 
 class PostController extends Controller
 {
@@ -154,6 +155,10 @@ class PostController extends Controller
 
         // Cards
         $post->body = LaravelCards::replace_card_snippets_with_template($post->body);
+
+        // JumbotronImages
+        $post->body = LaravelJumbotronImages::replaceJumbotronSnippetsWithTemplate($post->body);
+
 
         /*        $accordionClass = new AccordionClass();
                 $post->body = $accordionClass->getAccordion($post->body);

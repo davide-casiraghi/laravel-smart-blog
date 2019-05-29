@@ -58,6 +58,7 @@ abstract class TestCase extends BaseTestCase
             \DavideCasiraghi\BootstrapAccordion\AccordionServiceProvider::class,
             \DavideCasiraghi\ResponsiveGallery\ResponsiveGalleryServiceProvider::class,
             \DavideCasiraghi\LaravelCards\LaravelCardsServiceProvider::class,
+            \DavideCasiraghi\LaravelJumbotronImages\LaravelJumbotronImagesServiceProvider::class,
         ];
     }
 
@@ -70,6 +71,7 @@ abstract class TestCase extends BaseTestCase
             'BootstrapAccordion' => \DavideCasiraghi\BootstrapAccordion\Facades\BootstrapAccordion::class,
             'ResponsiveGallery' => \DavideCasiraghi\ResponsiveGallery\Facades\ResponsiveGallery::class,
             'LaravelCards' => \DavideCasiraghi\LaravelCards\Facades\LaravelCards::class,
+            'LaravelJumbotronImages' => \DavideCasiraghi\LaravelJumbotronImages\Facades\LaravelJumbotronImages::class,
         ];
     }
 

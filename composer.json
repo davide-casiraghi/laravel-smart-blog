@@ -19,6 +19,7 @@
         "php": "^7.1",
         "davide-casiraghi/bootstrap-accordion-integrator": "^1.2",
         "davide-casiraghi/laravel-cards": "^1.0",
+        "davide-casiraghi/laravel-jumbotron-images": "^1.0",
         "davide-casiraghi/laravel-responsive-gallery": "^1.1",
         "dimsav/laravel-translatable": "^9.4",
         "illuminate/support": "5.8.*",
