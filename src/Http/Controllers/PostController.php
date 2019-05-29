@@ -158,13 +158,11 @@ class PostController extends Controller
 
         // JumbotronImages
         $post->body = LaravelJumbotronImages::replaceJumbotronSnippetsWithTemplate($post->body);
-
-
-        /*        $accordionClass = new AccordionClass();
-                $post->body = $accordionClass->getAccordion($post->body);
-                $post->before_content = $accordionClass->getAccordion($post->before_content);
-                $post->after_content = $accordionClass->getAccordion($post->after_content);
-
+        $post->before_content = LaravelJumbotronImages::replaceJumbotronSnippetsWithTemplate($post->before_content);
+        $post->after_content = LaravelJumbotronImages::replaceJumbotronSnippetsWithTemplate($post->after_content);
+        
+        
+        /*       
                 // Card
                 $cardClass = new CardClass();
                 $post->body = $cardClass->getCard($post->body);
