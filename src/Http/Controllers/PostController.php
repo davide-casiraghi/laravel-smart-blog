@@ -158,6 +158,7 @@ class PostController extends Controller
         $post->before_content = LaravelCards::replace_card_snippets_with_template($post->before_content);
         $post->after_content = LaravelCards::replace_card_snippets_with_template($post->after_content);
 
+
         // JumbotronImages
         $post->body = LaravelJumbotronImages::replaceJumbotronSnippetsWithTemplate($post->body);
         $post->before_content = LaravelJumbotronImages::replaceJumbotronSnippetsWithTemplate($post->before_content);
