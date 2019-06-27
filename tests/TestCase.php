@@ -54,7 +54,7 @@ abstract class TestCase extends BaseTestCase
             LaravelSmartBlogServiceProvider::class,
             \Mews\Purifier\PurifierServiceProvider::class,
             \Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider::class,
-            \Dimsav\Translatable\TranslatableServiceProvider::class,
+            \Astrotomic\Translatable\TranslatableServiceProvider::class,
             \DavideCasiraghi\BootstrapAccordion\AccordionServiceProvider::class,
             \DavideCasiraghi\ResponsiveGallery\ResponsiveGalleryServiceProvider::class,
             \DavideCasiraghi\LaravelCards\LaravelCardsServiceProvider::class,
