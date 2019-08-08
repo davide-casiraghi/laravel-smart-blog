@@ -54,6 +54,9 @@ To create the gallery_images table in your database.
 
 #### Load the JS file
 
+Run in the command line:   
+```npm i prismjs```      
+
 In the **resources/js/app.js** file of your application require the **Bricklayer** and **bricklayerBlogLayout.js** files before the Vue object get instanciated:
 
 ```
@@ -66,6 +69,8 @@ require('./vendor/laravel-smart-blog/bricklayerBlogLayout');
 window.myApp = new Vue({  
     el: '#app'
 });
+
+import 'prismjs';
 ```
 
 In the **resources/sass/app.scss** file of your application import the scss
